@@ -1,0 +1,3 @@
+#+TITLE: Baltimore Light Rail tracker
+
+Not much here yet, other than an Org file which will eventually contain a single-page webapp in the literate programming style. Right now it just contains the framework for one. You can find it [[http://blog.aaron-miller.me/light-rail-tracker/light-rail-tracker.html][here]].
