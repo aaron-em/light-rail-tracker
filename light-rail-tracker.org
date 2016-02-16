@@ -390,16 +390,20 @@ And here's the Javascript to make it work. Thanks to CSS3's capabilities, modify
 #+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="fold-headline-script") :results html
 
 * Application structure overview
+...
 
 * Data sources
-** Station data fixture
-** Track data fixture
-** Train position/status API
-** Station's next four trains API
+- Map integration via Google Maps
+- User location via browser geolocation API
+- Track layout data via MTA API (XML)
+- Station position data via MTA API (XML)
+- Realtime train position data via MTA API (JSON)
 
 * Data transformations
-** Station data polyline initializers
-** Track data polyline initializers
+- User location: GMap marker
+- Track layout: convert from XML to GMap polylines
+- Station positions: convert from XML to GMap markers
+- Train positions: convert from JSON to GMap markers
 
 * Google map initialization
 ** Instantiate the map
@@ -410,7 +414,7 @@ And here's the Javascript to make it work. Thanks to CSS3's capabilities, modify
 ** Define train info update function
 - Get train API
 - Render trains as map markers
-** Invoke it on an interval
+** Invoke it on an interval (window interval)
 
 * User position handling
 ** Define user position update function
@@ -419,7 +423,7 @@ And here's the Javascript to make it work. Thanks to CSS3's capabilities, modify
 - Find closest station
 - Center the map at midpoint between user & closest station
 - Zoom the map to show user & closest station
-** Invoke it on an interval
+** Invoke it on an interval (geo API watch)
 
 * UI miscellany
 ** Views
