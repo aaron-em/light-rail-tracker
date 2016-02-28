@@ -358,10 +358,6 @@ Note that the ~window.OrgDocumentSource~ binding is created by an inline call to
 
 #+CALL: expose-to-js(block-name="light-rail-tracker.org",binding="OrgDocumentSource") :results html :exports both
 
-Note also that we're a little bit cheating here, by using =document.write= - a /very/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is /all about/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.
-
-Not only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:
-
 #+NAME: insert-download-link
 #+BEGIN_SRC js :eval never
   (function() {
@@ -385,10 +381,7 @@ Not only that, but =document.write= is very useful here; using it means we can d
     link.addEventListener('click', clickHandler);
 
     container.appendChild(link);
-
-    document.write(container.outerHTML);
-    // document.querySelector('div#source-download-link-container')
-    //   .appendChild(link);
+    document.currentScript.parentNode.appendChild(container);
   })();
 #+END_SRC
 
