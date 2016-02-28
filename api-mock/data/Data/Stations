@@ -1,0 +1,716 @@
+<DocumentElement>
+  <Stations>
+    <StationID>9fc69da7-551b-4b44-b630-76b932ba8887</StationID>
+    <StationName>Hunt Valley</StationName>
+    <NorthPointLat>39.4962731883458</NorthPointLat>
+    <NorthPointLon>-76.6536519555371</NorthPointLon>
+    <SouthPointLat>39.4962703862863</SouthPointLat>
+    <SouthPointLon>-76.6548571518288</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>21</SignMessageNumber>
+    <CenterPoint>5beaa898-5755-4b66-84eb-93434b2f5e1f</CenterPoint>
+    <NBStopCode>109</NBStopCode>
+    <SBStopCode>110</SBStopCode>
+    <Address1>98 Shawan Road</Address1>
+    <Address2>Hunt Valley,MD 21031</Address2>
+    <ParkingSpots>134</ParkingSpots>
+    <HandicappedSpots>3</HandicappedSpots>
+    <BusLinks>9</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>1</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>36d56544-ac87-4c0a-a5f5-0c54ed2893ca</StationID>
+    <StationName>Pepper Rd</StationName>
+    <NorthPointLat>39.4921376271063</NorthPointLat>
+    <NorthPointLon>-76.6556860348851</NorthPointLon>
+    <SouthPointLat>39.4920796971598</SouthPointLat>
+    <SouthPointLon>-76.6566616553895</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>27</SignMessageNumber>
+    <CenterPoint>d5360e9f-d625-4e74-b283-c7c3512d96d1</CenterPoint>
+    <NBStopCode>107</NBStopCode>
+    <SBStopCode>108</SBStopCode>
+    <Address1>1101 Schilling Road</Address1>
+    <Address2>Hunt Valley,MD 21031</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>2</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>f9fb1695-c9c0-42c0-953b-243bd338bcd5</StationID>
+    <StationName>McCormick Rd</StationName>
+    <NorthPointLat>39.4895827693383</NorthPointLat>
+    <NorthPointLon>-76.6584996465516</NorthPointLon>
+    <SouthPointLat>39.4894721555559</SouthPointLat>
+    <SouthPointLon>-76.6594789737911</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>29</SignMessageNumber>
+    <CenterPoint>c6a3f4ca-7557-4945-accd-cfe90a20a249</CenterPoint>
+    <NBStopCode>105</NBStopCode>
+    <SBStopCode>106</SBStopCode>
+    <Address1>265 Schillings Circle</Address1>
+    <Address2>Hunt Valley,MD 21031</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>3</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>5b341bb3-5dd2-4c29-9479-ee70eb911242</StationID>
+    <StationName>Gilroy Rd</StationName>
+    <NorthPointLat>39.4826327333997</NorthPointLat>
+    <NorthPointLon>-76.6616175760582</NorthPointLon>
+    <SouthPointLat>39.4817379109182</SouthPointLat>
+    <SouthPointLon>-76.6618183042428</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>30</SignMessageNumber>
+    <CenterPoint>a0916823-ca1a-4367-9b25-62a822894fb7</CenterPoint>
+    <NBStopCode>103</NBStopCode>
+    <SBStopCode>104</SBStopCode>
+    <Address1>10903 Gilroy Road</Address1>
+    <Address2>Hunt Valley,MD 21031</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>9</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>4</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>8a26cfda-375f-40f6-9976-659cfd133193</StationID>
+    <StationName>Warren Rd</StationName>
+    <NorthPointLat>39.4759271641014</NorthPointLat>
+    <NorthPointLon>-76.6543086972983</NorthPointLon>
+    <SouthPointLat>39.4758469011232</SouthPointLat>
+    <SouthPointLon>-76.6531803013534</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>42</SignMessageNumber>
+    <CenterPoint>be9a1c8e-263b-4e68-bd7b-8984845f8943</CenterPoint>
+    <NBStopCode>101</NBStopCode>
+    <SBStopCode>102</SBStopCode>
+    <Address1>300 West Warren Road</Address1>
+    <Address2>Hunt Valley,MD 21031</Address2>
+    <ParkingSpots>337</ParkingSpots>
+    <HandicappedSpots>8</HandicappedSpots>
+    <BusLinks>9</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>5</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>c0ebed56-81b9-4d3c-891f-04ba1300c84c</StationID>
+    <StationName>Timonium Fairgrounds</StationName>
+    <NorthPointLat>39.448934716344</NorthPointLat>
+    <NorthPointLon>-76.6351340188069</NorthPointLon>
+    <SouthPointLat>39.4481330437953</SouthPointLat>
+    <SouthPointLon>-76.6347032003215</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>25</SignMessageNumber>
+    <CenterPoint>3c0d1013-eb69-4f87-aafc-cb840c7b199a</CenterPoint>
+    <NBStopCode>59</NBStopCode>
+    <SBStopCode>60</SBStopCode>
+    <Address1>2379 Greenspring Drive</Address1>
+    <Address2>Lutherville,MD 21093</Address2>
+    <ParkingSpots>744</ParkingSpots>
+    <HandicappedSpots>14</HandicappedSpots>
+    <BusLinks>9</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>6</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>42207272-d7c6-4087-8387-74a85cd07682</StationID>
+    <StationName>Timonium Business Park</StationName>
+    <NorthPointLat>39.4342689695071</NorthPointLat>
+    <NorthPointLon>-76.6282649216382</NorthPointLon>
+    <SouthPointLat>39.433425903569</SouthPointLat>
+    <SouthPointLon>-76.6280897467544</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>53</SignMessageNumber>
+    <CenterPoint>5369dd37-ef03-4f5a-880f-ebf0b55c6a14</CenterPoint>
+    <NBStopCode>55</NBStopCode>
+    <SBStopCode>56</SBStopCode>
+    <Address1>11 West Aylesbury Road</Address1>
+    <Address2>Lutherville,MD 21093</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>7</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>a9b0b48f-f789-4fb6-b0ab-051c9339cc90</StationID>
+    <StationName>Lutherville</StationName>
+    <NorthPointLat>39.4293116297206</NorthPointLat>
+    <NorthPointLon>-76.6272112120235</NorthPointLon>
+    <SouthPointLat>39.4285034170261</SouthPointLat>
+    <SouthPointLon>-76.6270404496206</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>43</SignMessageNumber>
+    <CenterPoint>8b69105b-84f0-4fe2-888f-0351ac1fff2e</CenterPoint>
+    <NBStopCode>53</NBStopCode>
+    <SBStopCode>54</SBStopCode>
+    <Address1>124 Ridgely Road</Address1>
+    <Address2>Lutherville,MD 21093</Address2>
+    <ParkingSpots>315</ParkingSpots>
+    <HandicappedSpots>12</HandicappedSpots>
+    <BusLinks>8, 9</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>8</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>395108e0-1b19-4e03-9955-ad3098bd8b25</StationID>
+    <StationName>Falls Rd</StationName>
+    <NorthPointLat>39.3768981778327</NorthPointLat>
+    <NorthPointLon>-76.6492545688944</NorthPointLon>
+    <SouthPointLat>39.376344905323</SouthPointLat>
+    <SouthPointLon>-76.6501828992577</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>31</SignMessageNumber>
+    <CenterPoint>bb95e34d-aba3-4578-9d95-a6727f3cdcba</CenterPoint>
+    <NBStopCode>45</NBStopCode>
+    <SBStopCode>46</SBStopCode>
+    <Address1>2 Railroad Avenue</Address1>
+    <Address2>Baltimore,MD 21209</Address2>
+    <ParkingSpots>191</ParkingSpots>
+    <HandicappedSpots>4</HandicappedSpots>
+    <BusLinks>60</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>9</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>bfe30f45-f3e2-49db-8cd7-9ab5c404350c</StationID>
+    <StationName>Mt Washington</StationName>
+    <NorthPointLat>39.3688070443017</NorthPointLat>
+    <NorthPointLon>-76.6524612269823</NorthPointLon>
+    <SouthPointLat>39.3680997983738</SouthPointLat>
+    <SouthPointLon>-76.6518637591239</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>45</SignMessageNumber>
+    <CenterPoint>67b8df3b-507e-4a80-9638-91fa56d042b2</CenterPoint>
+    <NBStopCode>43</NBStopCode>
+    <SBStopCode>44</SBStopCode>
+    <Address1>1501 Smith Avenue</Address1>
+    <Address2>Baltimore,MD 21209</Address2>
+    <ParkingSpots>73</ParkingSpots>
+    <HandicappedSpots>3</HandicappedSpots>
+    <BusLinks>27, 58, 60</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>10</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>9a52d78d-a4c3-470f-94c6-9b5353bca4c2</StationID>
+    <StationName>Cold Spring Ln</StationName>
+    <NorthPointLat>39.3444212073235</NorthPointLat>
+    <NorthPointLon>-76.647981887751</NorthPointLon>
+    <SouthPointLat>39.3436689057002</SouthPointLat>
+    <SouthPointLon>-76.6477757141944</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>32</SignMessageNumber>
+    <CenterPoint>bade86ca-6f60-4a9c-bd9f-4b20bb1515d7</CenterPoint>
+    <NBStopCode>41</NBStopCode>
+    <SBStopCode>42</SBStopCode>
+    <Address1>1901 Cold Spring Lane</Address1>
+    <Address2>Baltimore,MD 21209</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>33</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>11</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>6a2d00e4-dd53-4605-bf6e-cf28e01697f2</StationID>
+    <StationName>Woodberry</StationName>
+    <NorthPointLat>39.3315597734477</NorthPointLat>
+    <NorthPointLon>-76.6435372421473</NorthPointLon>
+    <SouthPointLat>39.3307796000699</SouthPointLat>
+    <SouthPointLon>-76.6432323854492</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>33</SignMessageNumber>
+    <CenterPoint>723ebabb-f076-48ab-b769-62ac2246ba2c</CenterPoint>
+    <NBStopCode>40</NBStopCode>
+    <SBStopCode>39</SBStopCode>
+    <Address1>2465 Seneca Avenue</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>98</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>12</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>552a8018-ce44-47d5-bcc0-4df77b30479f</StationID>
+    <StationName>North Ave</StationName>
+    <NorthPointLat>39.3123019048044</NorthPointLat>
+    <NorthPointLon>-76.6229003183589</NorthPointLon>
+    <SouthPointLat>39.3113841731813</SouthPointLat>
+    <SouthPointLon>-76.6222364064774</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>34</SignMessageNumber>
+    <CenterPoint>b2e34ad9-bf11-4a53-95b2-d7c6e7d9a1dd</CenterPoint>
+    <NBStopCode>37</NBStopCode>
+    <SBStopCode>38</SBStopCode>
+    <Address1>325W. North Avenue</Address1>
+    <Address2>Baltimore,MD 21217</Address2>
+    <ParkingSpots>35</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>13</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>13</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>f8b4cdd0-9d15-4cf8-a99c-94fa35fcaa49</StationID>
+    <StationName>Penn Station</StationName>
+    <NorthPointLat>39.3079039196416</NorthPointLat>
+    <NorthPointLon>-76.6163604459159</NorthPointLon>
+    <SouthPointLat>39.3077186971646</SouthPointLat>
+    <SouthPointLon>-76.6159029756643</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>23</SignMessageNumber>
+    <CenterPoint>101cf3e3-0db6-47bb-83bb-8c41afcd167d</CenterPoint>
+    <NBStopCode>125</NBStopCode>
+    <SBStopCode>126</SBStopCode>
+    <Address1>1500 North Charles Street</Address1>
+    <Address2>Baltimore,MD 21211</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>3, 11, 61, 64</BusLinks>
+    <OtherLinks>MARC Train</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>14</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>63bcd5e6-dafe-4659-89a8-2baa3600f413</StationID>
+    <StationName>Mount Royal</StationName>
+    <NorthPointLat>39.3077954965592</NorthPointLat>
+    <NorthPointLon>-76.619917936422</NorthPointLon>
+    <SouthPointLat>39.306879014782</SouthPointLat>
+    <SouthPointLon>-76.6198703626028</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>41</SignMessageNumber>
+    <CenterPoint>e47f5fdd-af1a-4ad5-8da4-3b0bc1afdf41</CenterPoint>
+    <NBStopCode>35</NBStopCode>
+    <SBStopCode>36</SBStopCode>
+    <Address1>1223 West Mount Royal Avenue</Address1>
+    <Address2>Baltimore,MD 21217</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>15</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>aedf90c8-8a8d-4497-847b-395aa6836e6e</StationID>
+    <StationName>Cultural Center</StationName>
+    <NorthPointLat>39.3041555162731</NorthPointLat>
+    <NorthPointLon>-76.6205115321232</NorthPointLon>
+    <SouthPointLat>39.3031702369023</SouthPointLat>
+    <SouthPointLon>-76.6203686532164</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>48</SignMessageNumber>
+    <CenterPoint>af3192ce-367a-4d23-b800-b9891f6eb10d</CenterPoint>
+    <NBStopCode>33</NBStopCode>
+    <SBStopCode>34</SBStopCode>
+    <Address1>North Howard Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>21, 27</BusLinks>
+    <OtherLinks>Metro Subway</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>16</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>e9e50096-8129-4d16-89e9-d78bcff8d6dd</StationID>
+    <StationName>Centre St</StationName>
+    <NorthPointLat>39.2971313388596</NorthPointLat>
+    <NorthPointLon>-76.6199754990604</NorthPointLon>
+    <SouthPointLat>39.2964152469819</SouthPointLat>
+    <SouthPointLon>-76.6199292625724</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>52</SignMessageNumber>
+    <CenterPoint>a2a15f9d-c8bc-4bc2-9c84-cbcdc0bff30e</CenterPoint>
+    <NBStopCode>31</NBStopCode>
+    <SBStopCode>32</SBStopCode>
+    <Address1>540 North Howard Street</Address1>
+    <Address2>Baltimore,MD 21217</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>19, 27</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>17</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>40043354-7212-42b2-bab5-f16ee44bf96f</StationID>
+    <StationName>Lexington Market</StationName>
+    <NorthPointLat>39.2926354434291</NorthPointLat>
+    <NorthPointLon>-76.6196005590431</NorthPointLon>
+    <SouthPointLat>39.292022841393</SouthPointLat>
+    <SouthPointLon>-76.6195624518402</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>54</SignMessageNumber>
+    <CenterPoint>d2879457-230f-41f6-9585-92e251297bfa</CenterPoint>
+    <NBStopCode>29</NBStopCode>
+    <SBStopCode>30</SBStopCode>
+    <Address1>903 North Howard Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>5, 19, 27</BusLinks>
+    <OtherLinks>Metro Subway</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>18</StationOrder>
+  </Stations>
+  <!--<Stations>
+    <StationID>46ba1637-3649-403b-a28c-f39cc75539b2</StationID>
+    <StationName>Lexington Market Southbound</StationName>
+    <NorthPointLat>39.2912521644893</NorthPointLat>
+    <NorthPointLon>-76.6195946719039</NorthPointLon>
+    <SouthPointLat>39.29064170575</SouthPointLat>
+    <SouthPointLon>-76.6195519094148</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>54</SignMessageNumber>
+    <CenterPoint>13408e3a-7e30-474d-9d45-e9636e5e430e</CenterPoint>
+    <NBStopCode>29</NBStopCode>
+    <SBStopCode>30</SBStopCode>
+    <Address1>903 North Howard Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>5, 19, 27</BusLinks>
+    <OtherLinks>Metro Subway</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>19</StationOrder>
+  </Stations>-->
+  <Stations>
+    <StationID>c5be4588-43f8-4d2f-a875-cffaf1df0b74</StationID>
+    <StationName>Univ Ctr Baltimore St</StationName>
+    <NorthPointLat>39.2890998071474</NorthPointLat>
+    <NorthPointLon>-76.6194764647767</NorthPointLon>
+    <SouthPointLat>39.2883046338421</SouthPointLat>
+    <SouthPointLon>-76.6194240299462</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>55</SignMessageNumber>
+    <CenterPoint>e0994800-c56e-4c15-b1c8-f757e5114736</CenterPoint>
+    <NBStopCode>27</NBStopCode>
+    <SBStopCode>28</SBStopCode>
+    <Address1>12 South Howard Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>1, 5, 6, 8, 10, 19, 20, 27, 36, 40, 91, 120, 150, 160, 310, 311</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>20</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>7d876603-3dcd-444a-b7ba-c07daeb31725</StationID>
+    <StationName>Pratt St / Convention Center</StationName>
+    <NorthPointLat>39.2861862506598</NorthPointLat>
+    <NorthPointLon>-76.6194015557049</NorthPointLon>
+    <SouthPointLat>39.2853151259965</SouthPointLat>
+    <SouthPointLon>-76.6193559137985</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>56</SignMessageNumber>
+    <CenterPoint>8a8ddf11-b2a5-4f18-a768-6abe228a9929</CenterPoint>
+    <NBStopCode>25</NBStopCode>
+    <SBStopCode>26</SBStopCode>
+    <Address1>301 West Camden Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>7, 19, 27, 35, 320, 410, 411, 412, 420, 120, 160</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>21</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>b44bba5a-d44e-4d01-a8c9-6182ae9793c0</StationID>
+    <StationName>Camden Yards</StationName>
+    <NorthPointLat>39.2836771290985</NorthPointLat>
+    <NorthPointLon>-76.619437121384</NorthPointLon>
+    <SouthPointLat>39.2825957878299</SouthPointLat>
+    <SouthPointLon>-76.6193684394059</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>24</SignMessageNumber>
+    <CenterPoint>60396ed2-06a8-40e3-96da-daf051a84a7e</CenterPoint>
+    <NBStopCode>23</NBStopCode>
+    <SBStopCode>24</SBStopCode>
+    <Address1>S. Howard St.and W. Conway Street</Address1>
+    <Address2>Baltimore,MD 21201</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>MARC Train</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>22</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>407dab4a-55e6-4575-a8d1-ea8614351396</StationID>
+    <StationName>Hamburg</StationName>
+    <NorthPointLat>39.2793851266332</NorthPointLat>
+    <NorthPointLon>-76.6196747706599</NorthPointLon>
+    <SouthPointLat>39.2785828204591</SouthPointLat>
+    <SouthPointLon>-76.6200855275233</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>57</SignMessageNumber>
+    <CenterPoint>4ae859c4-291c-49e6-8d6b-16520d985fd8</CenterPoint>
+    <NBStopCode>123</NBStopCode>
+    <SBStopCode>124</SBStopCode>
+    <Address1>902 S. Howard Street</Address1>
+    <Address2>Baltimore,MD 21230</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>23</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>7bce59f4-120d-4475-ab9f-f975092ff1da</StationID>
+    <StationName>Westport</StationName>
+    <NorthPointLat>39.2621995011586</NorthPointLat>
+    <NorthPointLon>-76.6318969650509</NorthPointLon>
+    <SouthPointLat>39.2614419991261</SouthPointLat>
+    <SouthPointLon>-76.6323527543791</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>35</SignMessageNumber>
+    <CenterPoint>9cd884eb-26a6-4ab2-ab6b-e9b5b920d51f</CenterPoint>
+    <NBStopCode>19</NBStopCode>
+    <SBStopCode>20</SBStopCode>
+    <Address1>2114 Kloman Street</Address1>
+    <Address2>Baltimore,MD 21230</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>27, 51</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>24</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>a2899023-c4fc-4cd9-89b8-5cc7fec6eacf</StationID>
+    <StationName>Cherry Hill</StationName>
+    <NorthPointLat>39.2564494512587</NorthPointLat>
+    <NorthPointLon>-76.6348605443917</NorthPointLon>
+    <SouthPointLat>39.2555546642407</SouthPointLat>
+    <SouthPointLon>-76.6349845896491</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>36</SignMessageNumber>
+    <CenterPoint>04adf441-c933-4226-bc82-f8bf5f267c77</CenterPoint>
+    <NBStopCode>17</NBStopCode>
+    <SBStopCode>18</SBStopCode>
+    <Address1>1701 Cherry Hill Road</Address1>
+    <Address2>Baltimore,MD 21230</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>27, 29, 51</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>25</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>fa974e0e-2a25-448d-be3e-43a3de4b67f8</StationID>
+    <StationName>Patapsco</StationName>
+    <NorthPointLat>39.2424042667254</NorthPointLat>
+    <NorthPointLon>-76.6298110914611</NorthPointLon>
+    <SouthPointLat>39.2415544806798</SouthPointLat>
+    <SouthPointLon>-76.6301750137173</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>37</SignMessageNumber>
+    <CenterPoint>2ec004ca-53b6-4180-adfd-584cee3b6fb4</CenterPoint>
+    <NBStopCode>15</NBStopCode>
+    <SBStopCode>16</SBStopCode>
+    <Address1>751 West Patapsco Avenue</Address1>
+    <Address2>Halethorpe,MD 21227</Address2>
+    <ParkingSpots>187</ParkingSpots>
+    <HandicappedSpots>5</HandicappedSpots>
+    <BusLinks>14, 16, 17, 51, 77</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>26</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>af11d61e-247c-43db-a8d2-da660ce8511a</StationID>
+    <StationName>Baltimore Highlands</StationName>
+    <NorthPointLat>39.2355386165255</NorthPointLat>
+    <NorthPointLon>-76.6327414246253</NorthPointLon>
+    <SouthPointLat>39.2346993228559</SouthPointLat>
+    <SouthPointLon>-76.6330885842889</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>58</SignMessageNumber>
+    <CenterPoint>6518defb-0f19-45ad-8ce6-8a5086e9a89d</CenterPoint>
+    <NBStopCode>13</NBStopCode>
+    <SBStopCode>14</SBStopCode>
+    <Address1>4215 Baltimore Street</Address1>
+    <Address2>Halethorpe, MD 21227</Address2>
+    <ParkingSpots>46</ParkingSpots>
+    <HandicappedSpots>2</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>27</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>6de87167-df01-4c3c-b7c5-69b73177994f</StationID>
+    <StationName>Nursery Rd</StationName>
+    <NorthPointLat>39.221953108716</NorthPointLat>
+    <NorthPointLon>-76.6411872960014</NorthPointLon>
+    <SouthPointLat>39.2211612538299</SouthPointLat>
+    <SouthPointLon>-76.6416065603688</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>38</SignMessageNumber>
+    <CenterPoint>aa9b8d24-2ad8-4418-a36d-dcff7223df2b</CenterPoint>
+    <NBStopCode>11</NBStopCode>
+    <SBStopCode>12</SBStopCode>
+    <Address1>6852 Baltimore Annapolis Boulevard</Address1>
+    <Address2>Linthicum Heights,MD 21090</Address2>
+    <ParkingSpots>33</ParkingSpots>
+    <HandicappedSpots>1</HandicappedSpots>
+    <BusLinks>17</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>28</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>0e6ec22b-be11-4ab4-916c-b6ec4f1b2fb8</StationID>
+    <StationName>North Linthicum</StationName>
+    <NorthPointLat>39.2147024556092</NorthPointLat>
+    <NorthPointLon>-76.645790660092</NorthPointLon>
+    <SouthPointLat>39.2139431425678</SouthPointLat>
+    <SouthPointLon>-76.6463972927386</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>59</SignMessageNumber>
+    <CenterPoint>016b3e8a-a7f9-44f8-a8d9-4fcc9ced20b1</CenterPoint>
+    <NBStopCode>9</NBStopCode>
+    <SBStopCode>10</SBStopCode>
+    <Address1>450 N. Camp Meade Road</Address1>
+    <Address2>Linthicum Heights,MD 21090</Address2>
+    <ParkingSpots>313</ParkingSpots>
+    <HandicappedSpots>7</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>29</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>485d8bba-24aa-41b1-9328-4476fdb63bc7</StationID>
+    <StationName>Linthicum</StationName>
+    <NorthPointLat>39.2027320721581</NorthPointLat>
+    <NorthPointLon>-76.6550921474177</NorthPointLon>
+    <SouthPointLat>39.2019421351287</SouthPointLat>
+    <SouthPointLon>-76.6555933566123</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>39</SignMessageNumber>
+    <CenterPoint>77f4adae-2126-48a1-a7dd-5c0afcc62afc</CenterPoint>
+    <NBStopCode>7</NBStopCode>
+    <SBStopCode>8</SBStopCode>
+    <Address1>595 Camp Meade Road</Address1>
+    <Address2>Linthicum Heights,MD 21090</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>30</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>48f8f463-aed3-4614-8f39-5d21e1d9d02e</StationID>
+    <StationName>Ferndale</StationName>
+    <NorthPointLat>39.1840309985478</NorthPointLat>
+    <NorthPointLon>-76.6402900358123</NorthPointLon>
+    <SouthPointLat>39.1831916472784</SouthPointLat>
+    <SouthPointLon>-76.6399950576674</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>40</SignMessageNumber>
+    <CenterPoint>7b4ed69a-cb39-4d67-ade1-67b209a63c3a</CenterPoint>
+    <NBStopCode>3</NBStopCode>
+    <SBStopCode>4</SBStopCode>
+    <Address1>10 Broadview Boulevard</Address1>
+    <Address2>GenBurnie,MD 21061</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>none</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>31</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>bb0c0430-6b85-4100-b1ac-69e2b6d9cbb4</StationID>
+    <StationName>Cromwell</StationName>
+    <NorthPointLat>39.1724553082941</NorthPointLat>
+    <NorthPointLon>-76.633381491686</NorthPointLon>
+    <SouthPointLat>39.1716919247366</SouthPointLat>
+    <SouthPointLon>-76.6327431513789</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>26</SignMessageNumber>
+    <CenterPoint>de0e7769-e750-41e0-bd82-ca52ee9fabaa</CenterPoint>
+    <NBStopCode>1</NBStopCode>
+    <SBStopCode>2</SBStopCode>
+    <Address1>7378 Baltimore Annapolis Boulevard</Address1>
+    <Address2>Glen Burnie, Md. 21061</Address2>
+    <ParkingSpots>749</ParkingSpots>
+    <HandicappedSpots>11</HandicappedSpots>
+    <BusLinks>14</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>32</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>667f68f7-7b36-401b-acb8-7bb81c591e0e</StationID>
+    <StationName>BWI Business District</StationName>
+    <NorthPointLat>39.1913885032381</NorthPointLat>
+    <NorthPointLon>-76.6725782878604</NorthPointLon>
+    <SouthPointLat>39.1914476530583</SouthPointLat>
+    <SouthPointLon>-76.6738184502812</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>60</SignMessageNumber>
+    <CenterPoint>19fe9cd3-ba22-409a-a178-95d3c3aa5025</CenterPoint>
+    <NBStopCode>121</NBStopCode>
+    <SBStopCode>122</SBStopCode>
+    <Address1>678 Elkridge Landing Road</Address1>
+    <Address2>Linthicum Heights,MD 21090</Address2>
+    <ParkingSpots>30</ParkingSpots>
+    <HandicappedSpots>3</HandicappedSpots>
+    <BusLinks>17</BusLinks>
+    <OtherLinks>none</OtherLinks>
+    <ParkNRide>True</ParkNRide>
+    <StationOrder>33</StationOrder>
+  </Stations>
+  <Stations>
+    <StationID>4ab365ed-e7fb-4e8a-a2a5-46551e640e66</StationID>
+    <StationName>BWI Airport</StationName>
+    <NorthPointLat>39.1831365960903</NorthPointLat>
+    <NorthPointLon>-76.6701217067194</NorthPointLon>
+    <SouthPointLat>39.1823305467569</SouthPointLat>
+    <SouthPointLon>-76.6693738910103</SouthPointLon>
+    <NSOrder />
+    <SignMessageNumber>22</SignMessageNumber>
+    <CenterPoint>8c59e478-dc68-473c-b2ee-2e2df1b5642d</CenterPoint>
+    <NBStopCode>119</NBStopCode>
+    <SBStopCode>120</SBStopCode>
+    <Address1>BWI Thurgood Marshall Airport, MD</Address1>
+    <Address2>21240-0766</Address2>
+    <ParkingSpots>0</ParkingSpots>
+    <HandicappedSpots>0</HandicappedSpots>
+    <BusLinks>17</BusLinks>
+    <OtherLinks>MARC,Amtrak</OtherLinks>
+    <ParkNRide>False</ParkNRide>
+    <StationOrder>34</StationOrder>
+  </Stations>
+</DocumentElement>

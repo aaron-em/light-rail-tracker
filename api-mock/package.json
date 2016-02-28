@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node_modules/.bin/http-server data/ -p 8123 -i false -d false"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
