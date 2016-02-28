@@ -2,7 +2,8 @@
 #+AUTHOR: Aaron Miller <me@aaron-miller.me>
 #+LANGUAGE: en
 #+OPTIONS: \n:t
-#+HTML_HEAD_EXTRA: <style type="text/css">body { font-family: sans-serif; }</style>
+#+HTML_HEAD_EXTRA: <style type="text/css">body { font-family: sans-serif; -webkit-text-size-adjust: none; }</style>
+#+HTML_HEAD_EXTRA: <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
 * Introduction
 
@@ -22,23 +23,8 @@ Failing that, you'll probably get the most benefit out of this document if you c
 
 That said, if you're totally unfamiliar with everything I've just mentioned, there's probably still something for you here. If nothing else, maybe an example of literate programming might come in handy. In any case, enjoy! And if you have questions, don't hesitate to [[mailto:me@aaron-miller.me][ask]].
 
-* External libraries
-Our app depends on a few externally hosted Javascript libraries, so let's go ahead and include them in the HTML document.
-
-
-#+NAME: external-library-refs
-#+BEGIN_SRC html :eval never
-  <!-- download.js: easy, cross-browser "download" of non-file data -->
-  <script type="text/javascript"
-          src="http://danml.com/js/download.js"></script>
-  <!-- q.js: Kris Kowal's brilliant promises library -->
-  <script type="text/javascript"
-          src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"></script>
-#+END_SRC
-
-#+CALL: insert-wrapped-source(tag="div",block-name="external-library-refs") :results html
-
 * Utility functions
+There are a couple of capabilities that Org mode doesn't have by default, and which we'll need in order to write a web application with it. Here's where we'll implement those. If you're only interested in the parts of this which relate to the web app proper, you can safely ignore this section.
 
 ** insert-wrapped-source
 Org-mode doesn't currently support syntax highlighting in example blocks, and also doesn't support named references to the literal content of a source block (rather than the results of evaluating that source block).
@@ -174,74 +160,6 @@ Taken all in all, this ends us up with a pretty seriously heavyweight "utility f
            html-result)))
 #+END_SRC
 
-* Org source download
-Now that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.
-
-Note that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~<script />~ element, which immediately follows this text.
-
-#+CALL: expose-to-js(block-name="light-rail-tracker.org",binding="OrgDocumentSource") :results html :exports both
-
-Note also that we're a little bit cheating here, by using =document.write= - a /very/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is /all about/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.
-
-Not only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:
-
-#+NAME: insert-download-link
-#+BEGIN_SRC js :eval never
-  (function() {
-    var clickHandler = function(e) {
-      e.preventDefault();
-      download(window.OrgDocumentSource, 'light-rail-tracker.org', 'text/plain');
-      return false;
-    };
-
-    var container = document.createElement('div');
-    var link = document.createElement('a');
-    var title = 'Download light-rail-tracker.org';
-
-    container.id = "source-download-link-container";
-
-    link.id = "source-download-link";
-    link.href = "";
-    link.title = title;
-    link.textContent = title;
-
-    link.addEventListener('click', clickHandler);
-
-    container.appendChild(link);
-
-    document.write(container.outerHTML);
-    // document.querySelector('div#source-download-link-container')
-    //   .appendChild(link);
-  })();
-#+END_SRC
-
-It'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.
-
-#+NAME: download-link-styles
-#+BEGIN_SRC css :eval never
-  div#source-download-link-container {
-    text-align: center;
-  }
-
-  a#source-download-link {
-    display: inline-block;
-    padding: 12px;
-    background: #F0F8FF;
-    border: 3px solid #C0C0F0;
-    border-radius: 10px;
-    text-decoration: none;
-    color: black;
-    font-family: sans-serif;
-    font-size: x-large;
-  }
-#+END_SRC
-
-#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="download-link-styles") :results html
-
-And here we are!
-
-#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="insert-download-link") :results html
-
 * UI conveniences
 ** Org pre styles
 The default Org-mode template is a little bit incomplete when it comes to the ~<pre>~ tags enclosing source and example blocks. Let's fix that up a little.
@@ -259,6 +177,7 @@ While we're at it, let's apply line wrapping to the document source where we inc
     border-radius: 5px;
   }
 
+  /* may not work; see below */
   pre#light-rail-tracker\.org {
     white-space: pre-wrap;
   }
@@ -268,6 +187,8 @@ While we're at it, let's apply line wrapping to the document source where we inc
   }
 #+END_SRC
 #+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="pre-styles") :results html
+
+Note that, if you're using Org 8.3, the ID selector for the document source block probably won't work, because that version of Org mode changes the manner in which IDs for source block ~<pre>~ tags are generated. There's a discussion currently underway on the Org mode development ML around a patch to make this behavior conditional; assuming that comes out the way I'd like it to, I'll add the relevant file-local variable to this document, and it won't be a problem. In the meantime, keep it in mind.
 
 ** Headline fold/unfold
 This document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a ~:folded:~ tag.
@@ -379,6 +300,19 @@ Thanks to the impressive capabilities of modern stylesheets, we can implement al
     text-decoration: none;
   }
 
+  /* On narrower (e.g. mobile) displays, don't use left margins to avoid */
+  /* wasting screen space                                                */
+
+  @media (max-width: 640px) {
+    h2 ~ * , h3 ~ * {
+      margin-left: auto !important;
+    }
+
+    pre {
+      margin: 0 !important;
+      font-size: smaller;
+    }
+  }
 #+END_SRC
 #+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="fold-headline-styles") :results html
 
@@ -417,25 +351,133 @@ With all the hard work done in CSS, we can toggle a headline's fold state just b
 #+END_SRC
 #+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="fold-headline-script") :results html
 
-* Application structure overview
-(...)
+* Org source download
+Now that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.
 
-It's not tidy to just hang whatever bindings we please off the global object. For neatness' sake, let's create a single top-level binding, that we'll use to contain our application's various pieces and parts.
+Note that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~<script />~ element, which immediately follows this text.
+
+#+CALL: expose-to-js(block-name="light-rail-tracker.org",binding="OrgDocumentSource") :results html :exports both
+
+Note also that we're a little bit cheating here, by using =document.write= - a /very/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is /all about/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.
+
+Not only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:
+
+#+NAME: insert-download-link
+#+BEGIN_SRC js :eval never
+  (function() {
+    var clickHandler = function(e) {
+      e.preventDefault();
+      download(window.OrgDocumentSource, 'light-rail-tracker.org', 'text/plain');
+      return false;
+    };
+
+    var container = document.createElement('div');
+    var link = document.createElement('a');
+    var title = 'Download light-rail-tracker.org';
+
+    container.id = "source-download-link-container";
+
+    link.id = "source-download-link";
+    link.href = "";
+    link.title = title;
+    link.textContent = title;
+
+    link.addEventListener('click', clickHandler);
+
+    container.appendChild(link);
+
+    document.write(container.outerHTML);
+    // document.querySelector('div#source-download-link-container')
+    //   .appendChild(link);
+  })();
+#+END_SRC
+
+It'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.
+
+#+NAME: download-link-styles
+#+BEGIN_SRC css :eval never
+  div#source-download-link-container {
+    text-align: center;
+  }
+
+  a#source-download-link {
+    display: inline-block;
+    padding: 12px;
+    background: #F0F8FF;
+    border: 3px solid #C0C0F0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: x-large;
+  }
+#+END_SRC
+
+#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="download-link-styles") :results html
+
+And here we are!
+
+#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="insert-download-link") :results html
+
+* Application binding
+There's no real reason why we can't just hang the pieces and parts of our application off the global object, but doing so wouldn't be tidy. Let's create a top-level binding so we have a place to put them.
 
 #+NAME: app.js
 #+BEGIN_SRC js :eval never
-window.app = new Object();
+  window.app = new Object({
+    classes: {}
+  });
 #+END_SRC
 #+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="app.js") :results html
 
-* Data sources
-- Map integration via Google Maps
-- User location via browser geolocation API
-- Track layout data via MTA API (XML)
-- Station position data via MTA API (XML)
-- Realtime train position data via MTA API (JSON)
+* External libraries
+We could include these in the Org source, but there's not exactly a real need to do so; on the one hand, they aren't going to change, and on the other, its dependencies on external APIs for core functionality mean that this app won't ever be suited for completely offline use. So we'll go ahead and pull them in from wherever they happen to be hosted.
 
-** Tools for fetching data
+#+NAME: external-library-refs
+#+BEGIN_SRC html :eval never
+  <!-- download.js: easy, cross-browser "download" of non-file data -->
+  <script type="text/javascript"
+          src="http://danml.com/js/download.js"></script>
+  <!-- q.js: Kris Kowal's brilliant promises library -->
+  <script type="text/javascript"
+          src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"></script>
+#+END_SRC
+
+#+CALL: insert-wrapped-source(tag="div",block-name="external-library-refs") :results html
+
+* Application utility classes
+
+** Event emitter
+Since the train data will update on an interval, we'll want to make it easy to act on new information as it arrives, which we can do by having the data source emit events on which consumer code can register handlers. Unfortunately, while Node.js and friends provide a general-purpose event emitter class, browsers don't; fortunately, it's actually a very simple pattern to implement, so we'll go ahead and do that here.
+
+#+NAME: event-emitter.js
+#+BEGIN_SRC js :eval never
+  app.classes.EventEmitter = function() {
+    this.handlers = {};
+  };
+
+  app.classes.EventEmitter.prototype.emit = function(type /* ... */) {
+    var args = [].slice.call(arguments, 1);
+    if (Array.isArray(this.handlers[type])) {
+      this.handlers[type].forEach(function(handler) {
+        handler(args);
+      });
+    };
+  };
+
+  app.classes.EventEmitter.prototype.on = function(type, handler) {
+    if (! Array.isArray(this.handlers[type])) {
+      this.handlers[type] = [];
+    };
+
+    this.handlers[type].push(handler);
+  };
+#+END_SRC
+#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="event-emitter.js") :results html
+
+Of course, the Node implementation has some subtleties ours lacks, but for our purposes, this is all we need.
+
+** Fetching data
 Since we're not actually using any kind of framework here, but just vanilla Javascript, we'll want to spend a little effort setting up some tools for convenient fetching and parsing of data from the MTA's APIs.
 
 Let's start with a wrapper around XMLHttpRequest that takes an options object and returns a [[https://github.com/kriskowal/q][promise]]. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.
@@ -507,7 +549,7 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
           });
   
         try {
-          switch (args.type) {
+          switch (args.type) { // this could also look at content type
           case 'json':
             response.body.parsed = JSON.parse(XHR.responseText);
             break;
@@ -545,7 +587,60 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
 #+END_SRC
 #+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="promisify-xhr.js") :results html
 
+* Application structure overview
+(...)
 
+* Data sources
+- Map integration via Google Maps
+- User location via browser geolocation API
+- Track layout data via MTA API (XML)
+- Station position data via MTA API (XML)
+- Realtime train position data via MTA API (JSON)
+
+** Where to keep data
+(...)
+
+#+NAME: data-sources.js
+#+BEGIN_SRC js :eval never
+  app.classes.Source = function(url, opts) {
+    var self = this;
+
+    this.url = url;
+    this.data = null;
+    this.lastResult = null;
+
+    this.fetch = function() {
+      app.fetch(url, opts.fetch)
+        .then(function(res) {
+          self.lastResult = res.status.code;
+          self.data = res.body.parsed;
+        })
+        .catch(function(err) {
+          self.lastResult = err;
+          self.data = null;
+        });
+    };
+
+    if (opts.fetchImmediate) {
+      this.fetch();
+    };
+  };
+
+  app.classes.DataSources = function DataSources() {
+    this.sources = {};
+  };
+
+  app.classes.DataSources.prototype.addSource = function(name, url, opts) {
+    this.sources[name] = new app.classes.Source(url, opts);
+  };
+
+  app.classes.DataSources.prototype.get = function(name) {
+    return this.sources[name].data || this.sources[name].lastResult;
+  };
+
+  app.data = new app.classes.DataSources;
+#+END_SRC
+#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="data-sources.js") :results html
 
 ** Light Rail track layout data
 We'll obtain this from the same API that the official tracker uses to retrieve it for its own Google Maps overlay. Happily, as with all MTA APIs involved in this application, there's a CORS header allowing all request origins, so we don't need to proxy through a backend we control in order to fetch the data.

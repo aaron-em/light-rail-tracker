@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-02-24 Wed 22:28 -->
+<!-- 2016-02-28 Sun 11:28 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Baltimore Light Rail tracker</title>
@@ -94,7 +94,8 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<style type="text/css">body { font-family: sans-serif; }</style>
+<style type="text/css">body { font-family: sans-serif; -webkit-text-size-adjust: none; }</style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -155,55 +156,62 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline2">1.2. OK, but what <i>is</i> this?</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline4">2. External libraries</a></li>
-<li><a href="#orgheadline7">3. Utility functions</a>
+<li><a href="#orgheadline6">2. Utility functions</a>
 <ul>
-<li><a href="#orgheadline5">3.1. insert-wrapped-source</a></li>
-<li><a href="#orgheadline6">3.2. expose-to-js</a></li>
+<li><a href="#orgheadline4">2.1. insert-wrapped-source</a></li>
+<li><a href="#orgheadline5">2.2. expose-to-js</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline8">4. Org source download</a></li>
-<li><a href="#orgheadline11">5. UI conveniences</a>
+<li><a href="#orgheadline9">3. UI conveniences</a>
 <ul>
-<li><a href="#orgheadline9">5.1. Org pre styles</a></li>
-<li><a href="#orgheadline10">5.2. Headline fold/unfold</a></li>
+<li><a href="#orgheadline7">3.1. Org pre styles</a></li>
+<li><a href="#orgheadline8">3.2. Headline fold/unfold</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline12">6. Application structure overview</a></li>
-<li><a href="#orgheadline15">7. Data sources</a>
+<li><a href="#orgheadline10">4. Org source download</a></li>
+<li><a href="#orgheadline11">5. Application binding</a></li>
+<li><a href="#orgheadline12">6. External libraries</a></li>
+<li><a href="#orgheadline15">7. Application utility classes</a>
 <ul>
-<li><a href="#orgheadline13">7.1. Tools for fetching data</a></li>
-<li><a href="#orgheadline14">7.2. Light Rail track layout data</a></li>
+<li><a href="#orgheadline13">7.1. Event emitter</a></li>
+<li><a href="#orgheadline14">7.2. Fetching data</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline16">8. Data transformations</a></li>
-<li><a href="#orgheadline20">9. Google map initialization</a>
+<li><a href="#orgheadline16">8. Application structure overview</a></li>
+<li><a href="#orgheadline19">9. Data sources</a>
 <ul>
-<li><a href="#orgheadline17">9.1. Instantiate the map</a></li>
-<li><a href="#orgheadline18">9.2. Add track polylines</a></li>
-<li><a href="#orgheadline19">9.3. Add station polylines</a></li>
+<li><a href="#orgheadline17">9.1. Where to keep data</a></li>
+<li><a href="#orgheadline18">9.2. Light Rail track layout data</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline23">10. Train status updates</a>
+<li><a href="#orgheadline20">10. Data transformations</a></li>
+<li><a href="#orgheadline24">11. Google map initialization</a>
 <ul>
-<li><a href="#orgheadline21">10.1. Define train info update function</a></li>
-<li><a href="#orgheadline22">10.2. Invoke it on an interval (window interval)</a></li>
+<li><a href="#orgheadline21">11.1. Instantiate the map</a></li>
+<li><a href="#orgheadline22">11.2. Add track polylines</a></li>
+<li><a href="#orgheadline23">11.3. Add station polylines</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline26">11. User position handling</a>
+<li><a href="#orgheadline27">12. Train status updates</a>
 <ul>
-<li><a href="#orgheadline24">11.1. Define user position update function</a></li>
-<li><a href="#orgheadline25">11.2. Invoke it on an interval (geo API watch)</a></li>
+<li><a href="#orgheadline25">12.1. Define train info update function</a></li>
+<li><a href="#orgheadline26">12.2. Invoke it on an interval (window interval)</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline29">12. UI miscellany</a>
+<li><a href="#orgheadline30">13. User position handling</a>
 <ul>
-<li><a href="#orgheadline27">12.1. Views</a></li>
-<li><a href="#orgheadline28">12.2. View toggle</a></li>
+<li><a href="#orgheadline28">13.1. Define user position update function</a></li>
+<li><a href="#orgheadline29">13.2. Invoke it on an interval (geo API watch)</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline30">13. App activation</a></li>
-<li><a href="#orgheadline31">14. Org source&#xa0;&#xa0;&#xa0;<span class="tag"><span class="folded">folded</span></span></a></li>
+<li><a href="#orgheadline33">14. UI miscellany</a>
+<ul>
+<li><a href="#orgheadline31">14.1. Views</a></li>
+<li><a href="#orgheadline32">14.2. View toggle</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline34">15. App activation</a></li>
+<li><a href="#orgheadline35">16. Org source&#xa0;&#xa0;&#xa0;<span class="tag"><span class="folded">folded</span></span></a></li>
 </ul>
 </div>
 </div>
@@ -248,43 +256,17 @@ That said, if you're totally unfamiliar with everything I've just mentioned, the
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4"><span class="section-number-2">2</span> External libraries</h2>
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">2</span> Utility functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Our app depends on a few externally hosted Javascript libraries, so let's go ahead and include them in the HTML document.<br  />
+There are a couple of capabilities that Org mode doesn't have by default, and which we'll need in order to write a web application with it. Here's where we'll implement those. If you're only interested in the parts of this which relate to the web app proper, you can safely ignore this section.<br  />
 </p>
-
-
-<div class="org-src-container">
-
-<pre class="src src-html" id="external-library-refs"><span style="color: #00cd00; font-style: italic;">&lt;!-- </span><span style="color: #00cd00; font-style: italic;">download.js: easy, cross-browser "download" of non-file data </span><span style="color: #00cd00; font-style: italic;">--&gt;</span>
-&lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
-        <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"http://danml.com/js/download.js"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
-<span style="color: #00cd00; font-style: italic;">&lt;!-- </span><span style="color: #00cd00; font-style: italic;">q.js: Kris Kowal's brilliant promises library </span><span style="color: #00cd00; font-style: italic;">--&gt;</span>
-&lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
-        <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
-</pre>
 </div>
 
-<div >
-<!-- download.js: easy, cross-browser "download" of non-file data -->
-<script type="text/javascript"
-        src="http://danml.com/js/download.js"></script>
-<!-- q.js: Kris Kowal's brilliant promises library -->
-<script type="text/javascript"
-        src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"></script>
-
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgheadline7" class="outline-2">
-<h2 id="orgheadline7"><span class="section-number-2">3</span> Utility functions</h2>
-<div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5"><span class="section-number-3">3.1</span> insert-wrapped-source</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">2.1</span> insert-wrapped-source</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Org-mode doesn't currently support syntax highlighting in example blocks, and also doesn't support named references to the literal content of a source block (rather than the results of evaluating that source block).<br  />
 </p>
@@ -335,9 +317,9 @@ and have Org emit the contents of the named block <code>a-javascript-source-bloc
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6"><span class="section-number-3">3.2</span> expose-to-js</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">2.2</span> expose-to-js</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 We'll find ourselves, later on, wanting an easy way to expose named Org blocks to the Javascript environment in the browser, so that they're available for our application code to use. Let's go ahead and define an Emacs Lisp utility function to do that.<br  />
 </p>
@@ -447,8 +429,392 @@ Taken all in all, this ends us up with a pretty seriously heavyweight "utility f
 </div>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-2">
-<h2 id="orgheadline8"><span class="section-number-2">4</span> Org source download</h2>
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9"><span class="section-number-2">3</span> UI conveniences</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">3.1</span> Org pre styles</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+The default Org-mode template is a little bit incomplete when it comes to the <code>&lt;pre&gt;</code> tags enclosing source and example blocks. Let's fix that up a little.<br  />
+</p>
+
+<p>
+While we're at it, let's apply line wrapping to the document source where we include it in itself, so that its many long lines don't require a lot of horizontal scrolling. We'll also get rid of the rather ill-thought-out corner tag that would ordinarily appear when mousing over source blocks with known languages.<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-css" id="pre-styles"><span style="color: #00bfff;">pre.src, pre.example </span>{
+  <span style="color: #eedd82;">background</span>: #002;
+  <span style="color: #eedd82;">color</span>: #f0f8ff;
+  <span style="color: #eedd82;">overflow-x</span>: auto;
+  <span style="color: #eedd82;">padding</span>: 5px;
+  <span style="color: #eedd82;">border</span>: black solid 3px;
+  <span style="color: #eedd82;">border-radius</span>: 5px;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">may not work; see below </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">pre#light-rail-tracker\.org </span>{
+  <span style="color: #eedd82;">white-space</span>: pre-wrap;
+}
+
+<span style="color: #eedd82;">pre</span>::before {
+  <span style="color: #eedd82;">display</span>: none <span style="color: #b0c4de;">!important</span>;
+}
+</pre>
+</div>
+<style type="text/css">
+pre.src, pre.example {
+  background: #002;
+  color: #f0f8ff;
+  overflow-x: auto;
+  padding: 5px;
+  border: black solid 3px;
+  border-radius: 5px;
+}
+
+/* may not work; see below */
+pre#light-rail-tracker\.org {
+  white-space: pre-wrap;
+}
+
+pre::before {
+  display: none !important;
+}
+
+</style>
+
+<p>
+Note that, if you're using Org 8.3, the ID selector for the document source block probably won't work, because that version of Org mode changes the manner in which IDs for source block <code>&lt;pre&gt;</code> tags are generated. There's a discussion currently underway on the Org mode development ML around a patch to make this behavior conditional; assuming that comes out the way I'd like it to, I'll add the relevant file-local variable to this document, and it won't be a problem. In the meantime, keep it in mind.<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">3.2</span> Headline fold/unfold</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+This document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a <code>:folded:</code> tag.<br  />
+</p>
+
+<p>
+Thanks to the impressive capabilities of modern stylesheets, we can implement almost all of this functionality in terms of CSS classes - see below for how that's done. We do make fairly heavy use of both <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors">sibling selectors</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">the <code>content</code> property and <code>::before</code> pseudo-element</a> to achieve this, so if you're not yet familiar with how those work, now might be a good time to read up.<br  />
+</p>
+
+<p>
+(Do note that we're taking the opportunity to clean up a couple of warts with the way Org's default HTML export template handles heading tags, too; that's what the <code>span.tag</code> stuff is about, mostly. With it in place, we can hide the <code>folded</code> tag (which has no other purpose in this document, except to start a headline out folded) purely in CSS, without having to modify the DOM at all.)<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-css" id="fold-headline-styles"><span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Basic headline styles </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">h2, h3 </span>{
+  <span style="color: #eedd82;">cursor</span>: pointer;
+  <span style="color: #eedd82;">display</span>: inline-block;
+  <span style="color: #eedd82;">margin-left</span>: 0ex;
+  <span style="color: #eedd82;">padding</span>: 3px;
+  <span style="color: #eedd82;">border-radius</span>: 5px;
+  <span style="color: #eedd82;">border-width</span>: 1px;
+  <span style="color: #eedd82;">border-style</span>: solid;
+  <span style="color: #eedd82;">border-color</span>: transparent;
+
+  <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Seriously, Chrome? </span><span style="color: #00cd00; font-style: italic;">*/</span>
+  <span style="color: #eedd82;">margin-top</span>: 5px;
+  <span style="color: #eedd82;">margin-bottom</span>: 5px;
+  <span style="color: #eedd82; font-style: italic;">-webkit-margin-before</span>: 5px;
+  <span style="color: #eedd82; font-style: italic;">-webkit-margin-after</span>: 5px;
+}
+
+<span style="color: #eedd82;">h2</span>:hover,
+<span style="color: #00bfff;">h3:hover </span>{
+  <span style="color: #eedd82;">background</span>: #ddf;
+  <span style="color: #eedd82;">border-color</span>: #446;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Indent headlines' siblings (content elements) </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">h2 ~ * , h3 ~ * </span>{
+  <span style="color: #eedd82;">margin-left</span>: 4ex;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Shade folded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">h2.folded, h3.folded </span>{
+  <span style="color: #eedd82;">color</span>: #444;
+}
+
+<span style="color: #00bfff;">h2.unfolded, h3.unfolded </span>{
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide content for folded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">h2.folded ~ *, h3.folded ~ * </span>{
+  <span style="color: #eedd82;">display</span>: none;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Show content for unfolded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">h2.unfolded ~ *, h3.unfolded ~ * </span>{
+  <span style="color: #eedd82;">display</span>: block;
+  <span style="color: #eedd82;">margin-left</span>: 4ex;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Fold state indicators </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #eedd82;">h2</span>::before, h3::before {
+  <span style="color: #eedd82;">display</span>: inline-block;
+  <span style="color: #eedd82;">width</span>: 2ex;
+  <span style="color: #eedd82;">max-width</span>: 2ex;
+  <span style="color: #eedd82;">min-width</span>: 2ex;
+  <span style="color: #eedd82;">text-align</span>: center;
+  <span style="color: #eedd82;">margin-right</span>: 1ex;
+  <span style="color: #eedd82;">color</span>: #88b;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Folded state indicator </span><span style="color: #00cd00; font-style: italic;">*/</span>
+h2.folded::before, h3.folded::before {
+  <span style="color: #eedd82;">content</span>: <span style="color: #dda0dd;">'+'</span>
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Unfolded state indicator </span><span style="color: #00cd00; font-style: italic;">*/</span>
+h2.unfolded::before, h3.unfolded::before {
+  <span style="color: #eedd82;">content</span>: <span style="color: #dda0dd;">'-'</span>
+}
+
+<span style="color: #00cd00; font-style: italic;">/*</span>
+<span style="color: #00cd00; font-style: italic;"> * "Folded" tag styles begin here</span>
+<span style="color: #00cd00; font-style: italic;"> </span><span style="color: #00cd00; font-style: italic;">*/</span>
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide the "folded" tag on headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">span.tag span.folded </span>{
+  <span style="color: #eedd82;">display</span>: none;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Move some styles off the tag container element and onto tags </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">themselves, so that an empty tag container is invisible      </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">span.tag </span>{
+  <span style="color: #eedd82;">background</span>: inherit;
+  <span style="color: #eedd82;">padding</span>: none;
+}
+
+<span style="color: #00bfff;">span.tag * </span>{
+  <span style="color: #eedd82;">background</span>: #DDF;
+  <span style="color: #eedd82;">padding</span>: 2px;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide the "folded" tag in TOC entries </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">div#text-table-of-contents li span.tag span.folded </span>{
+  <span style="color: #eedd82;">display</span>: none;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Avoid display of spaces that export doesn't </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">clean up in TOC links                       </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00bfff;">div#text-table-of-contents li a </span>{
+  <span style="color: #eedd82;">text-decoration</span>: none;
+}
+
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">On narrower (e.g. mobile) displays, don't use left margins to avoid </span><span style="color: #00cd00; font-style: italic;">*/</span>
+<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">wasting screen space                                                </span><span style="color: #00cd00; font-style: italic;">*/</span>
+
+<span style="color: #b0c4de;">@media</span> (max-width: 640px) {
+<span style="color: #00bfff;">  h2 ~ * , h3 ~ * </span>{
+    <span style="color: #eedd82;">margin-left</span>: auto <span style="color: #b0c4de;">!important</span>;
+  }
+
+<span style="color: #00bfff;">  pre </span>{
+    <span style="color: #eedd82;">margin</span>: 0 <span style="color: #b0c4de;">!important</span>;
+    <span style="color: #eedd82;">font-size</span>: smaller;
+  }
+}
+</pre>
+</div>
+<style type="text/css">
+/* Basic headline styles */
+h2, h3 {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 0ex;
+  padding: 3px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+
+  /* Seriously, Chrome? */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-margin-before: 5px;
+  -webkit-margin-after: 5px;
+}
+
+h2:hover,
+h3:hover {
+  background: #ddf;
+  border-color: #446;
+}
+
+/* Indent headlines' siblings (content elements) */
+h2 ~ * , h3 ~ * {
+  margin-left: 4ex;
+}
+
+/* Shade folded headlines */
+h2.folded, h3.folded {
+  color: #444;
+}
+
+h2.unfolded, h3.unfolded {
+}
+
+/* Hide content for folded headlines */
+h2.folded ~ *, h3.folded ~ * {
+  display: none;
+}
+
+/* Show content for unfolded headlines */
+h2.unfolded ~ *, h3.unfolded ~ * {
+  display: block;
+  margin-left: 4ex;
+}
+
+/* Fold state indicators */
+h2::before, h3::before {
+  display: inline-block;
+  width: 2ex;
+  max-width: 2ex;
+  min-width: 2ex;
+  text-align: center;
+  margin-right: 1ex;
+  color: #88b;
+}
+
+/* Folded state indicator */
+h2.folded::before, h3.folded::before {
+  content: '+'
+}
+
+/* Unfolded state indicator */
+h2.unfolded::before, h3.unfolded::before {
+  content: '-'
+}
+
+/*
+ ,,* "Folded" tag styles begin here
+ ,,*/
+
+/* Hide the "folded" tag on headlines */
+span.tag span.folded {
+  display: none;
+}
+
+/* Move some styles off the tag container element and onto tags */
+/* themselves, so that an empty tag container is invisible      */
+span.tag {
+  background: inherit;
+  padding: none;
+}
+
+span.tag * {
+  background: #DDF;
+  padding: 2px;
+}
+
+/* Hide the "folded" tag in TOC entries */
+div#text-table-of-contents li span.tag span.folded {
+  display: none;
+}
+
+/* Avoid display of spaces that export doesn't */
+/* clean up in TOC links                       */
+div#text-table-of-contents li a {
+  text-decoration: none;
+}
+
+/* On narrower (e.g. mobile) displays, don't use left margins to avoid */
+/* wasting screen space                                                */
+
+@media (max-width: 640px) {
+  h2 ~ * , h3 ~ * {
+    margin-left: auto !important;
+  }
+
+  pre {
+    margin: 0 !important;
+    font-size: smaller;
+  }
+}
+
+</style>
+
+<p>
+With all the hard work done in CSS, we can toggle a headline's fold state just by giving it a <code>folded</code> or <code>unfolded</code> class, which we'll implement as a <code>click</code> event listener on headline elements:<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js" id="fold-headline-script">window.addEventListener(<span style="color: #dda0dd;">'DOMContentLoaded'</span>, <span style="color: #4f94cd; font-style: italic;">function</span>() {
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">headlines</span> = document.querySelectorAll(<span style="color: #dda0dd;">'h2,h3'</span>);
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">headline</span>;
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">startsFolded</span>;
+
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">toggleHeadlineFold</span> = <span style="color: #4f94cd; font-style: italic;">function</span>() {
+    <span style="color: #7fffd4;">this</span>.classList.toggle(<span style="color: #dda0dd;">'unfolded'</span>);
+    <span style="color: #7fffd4;">this</span>.classList.toggle(<span style="color: #dda0dd;">'folded'</span>);
+  };
+
+  <span style="color: #4f94cd; font-style: italic;">for</span> (<span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">i</span> = 0; i &lt; headlines.length; i++) {
+    headline = headlines.item(i);
+
+    startsFolded = headline
+      .querySelector(<span style="color: #dda0dd;">'span.tag &gt; span.folded'</span>);
+
+    <span style="color: #4f94cd; font-style: italic;">if</span> (startsFolded) {
+      headline.classList.add(<span style="color: #dda0dd;">'folded'</span>);
+    } <span style="color: #4f94cd; font-style: italic;">else</span> {
+      headline.classList.add(<span style="color: #dda0dd;">'unfolded'</span>);
+    }
+
+    headline.addEventListener(<span style="color: #dda0dd;">'click'</span>,
+                              toggleHeadlineFold.bind(headline));
+  };
+
+  <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">TODO unfold sections when their TOC links are clicked</span>
+});
+</pre>
+</div>
+<script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function() {
+  var headlines = document.querySelectorAll('h2,h3');
+  var headline;
+  var startsFolded;
+
+  var toggleHeadlineFold = function() {
+    this.classList.toggle('unfolded');
+    this.classList.toggle('folded');
+  };
+
+  for (var i = 0; i < headlines.length; i++) {
+    headline = headlines.item(i);
+
+    startsFolded = headline
+      .querySelector('span.tag > span.folded');
+    
+    if (startsFolded) {
+      headline.classList.add('folded');
+    } else {
+      headline.classList.add('unfolded');
+    }
+    
+    headline.addEventListener('click',
+                              toggleHeadlineFold.bind(headline));
+  };
+
+  // TODO unfold sections when their TOC links are clicked
+});
+
+</script>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10"><span class="section-number-2">4</span> Org source download</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Now that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.<br  />
@@ -459,7 +825,7 @@ Note that the <code>window.OrgDocumentSource</code> binding is created by an inl
 </p>
 
 <script type="text/javascript">
-window.OrgDocumentSource = "#+TITLE: Baltimore Light Rail tracker\n#+AUTHOR: Aaron Miller <me@aaron-miller.me>\n#+LANGUAGE: en\n#+OPTIONS: \\n:t\n#+HTML_HEAD_EXTRA: <style type=\"text\/css\">body { font-family: sans-serif; }<\/style>\n\n* Introduction\n\n** What is this?\nIt's a single-page web application which integrates a variety of APIs to produce a map showing:\n- The Baltimore light rail lines and stations\n- If you allow geolocation access, the closest station to your current location\n- Real-time positions of trains currently in service\n- ETA information for trains arriving at the station nearest you\n\n** OK, but what \/is\/ this?\nIt's an Emacs Org-mode file that embodies the aforementioned single-page web application, written in the literate programming style. Exporting this file to HTML, using Org-mode's core export functionality, produces a build of the web application which you can host on your favorite server and use in your favorite browser.\n\nThe best way to read this document is in Emacs with Org 8.x and the Org and Emacs Lisp reference manuals installed. That way, you get the full benefit of this powerful programming environment, in which, for example, the full source and documentation of any Emacs Lisp function is just a few keystrokes away. (If you're wondering: =C-h f RET= while point is on the function name, then =TAB RET= in the ~*Help*~ buffer.)\n\nFailing that, you'll probably get the most benefit out of this document if you come to it with a basic understanding of both Org mode and Emacs Lisp; the former, of course, since the document is written in it, and the latter so that you can understand what's going on in the Emacs Lisp utility functions used throughout this document.\n\nThat said, if you're totally unfamiliar with everything I've just mentioned, there's probably still something for you here. If nothing else, maybe an example of literate programming might come in handy. In any case, enjoy! And if you have questions, don't hesitate to [[mailto:me@aaron-miller.me][ask]].\n\n* External libraries\nOur app depends on a few externally hosted Javascript libraries, so let's go ahead and include them in the HTML document.\n\n\n#+NAME: external-library-refs\n#+BEGIN_SRC html :eval never\n  <!-- download.js: easy, cross-browser \"download\" of non-file data -->\n  <script type=\"text\/javascript\"\n          src=\"http:\/\/danml.com\/js\/download.js\"><\/script>\n  <!-- q.js: Kris Kowal's brilliant promises library -->\n  <script type=\"text\/javascript\"\n          src=\"http:\/\/cdnjs.cloudflare.com\/ajax\/libs\/q.js\/0.9.2\/q.min.js\"><\/script>\n#+END_SRC\n\n#+CALL: insert-wrapped-source(tag=\"div\",block-name=\"external-library-refs\") :results html\n\n* Utility functions\n\n** insert-wrapped-source\nOrg-mode doesn't currently support syntax highlighting in example blocks, and also doesn't support named references to the literal content of a source block (rather than the results of evaluating that source block).\n\nThis is a pain in the neck for us, because we want to do both of these things. Defining our app's Javascript and CSS code in source code blocks is the only way to get it syntax-highlighted in the exported HTML, and of course we need to be able to insert the raw contents of these source blocks into the exported HTML, so that the browser will make use of them.\n\nFortunately, Org is smarter than it knows, and provides a couple of lower-level functions, =org-babel-find-named-block= and =org-babel-read-result=, which make it almost trivial to fetch the contents of a source block. We just need to write a little glue code that'll leverage them to fetch the source we need, and a little more that'll wrap that source in a suitable HTML tag. Here's how we do that:\n\n#+NAME: insert-wrapped-source\n#+BEGIN_SRC emacs-lisp :exports code :results silent :var tag=\"\" :var attrs=() :var block-name=\"\"\n  (and (not (string= tag \"\"))\n       (not (string= block-name \"\"))\n       (cl-flet ((stringify (alist)\n                            (mapconcat #'identity\n                                       (mapcar #'(lambda (pair)\n                                                   (concat (symbol-name (car pair))\n                                                           \"=\" \"\\\"\" (cdr pair) \"\\\"\"))\n                                               alist) \" \")))\n         (let ((block-loc (org-babel-find-named-block block-name))\n               source)\n           (if (null block-loc)\n               (signal 'no-such-block \n                       (list (concat \"Block '\" block-name \"' not found in this buffer.\")))\n               (save-excursion\n                 (goto-char block-loc)\n                 (setq source (org-babel-read-result))\n                 (concat \"<\" tag \" \" (stringify attrs) \">\" \"\\n\"\n                         source \"\\n\"\n                         \"<\/\" tag \">\"))))))\n#+END_SRC\n\nNow that it's defined, we can insert calls to it in our Org file like so:\n\n#+BEGIN_EXAMPLE\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"a-javascript-source-block\") :results html\n#+END_EXAMPLE\n\nand have Org emit the contents of the named block =a-javascript-source-block=, wrapped in ~<script type=\"text\/javascript\">~ and ~<\/script>~.\n\n** expose-to-js\nWe'll find ourselves, later on, wanting an easy way to expose named Org blocks to the Javascript environment in the browser, so that they're available for our application code to use. Let's go ahead and define an Emacs Lisp utility function to do that.\n\nUnfortunately, this isn't quite as simple as we'd have preferred it to be. ~org-babel-read-result~ has some trouble with escaped Org source; in particular, it breaks as soon as it hits an escaped ~#+END_SRC~ keyword. \n\nIn order to do a reliable capturing job, then, we have to do some lower-level stuff with ~re-search-forward~ to find the extent of the block we're capturing. Since we may find ourselves dealing with escaped Org source, we also have to do some unescaping, which also apparently has to happen by hand -- if there's an Org function to do that, I haven't been able to find it yet.\n\nThen, too, in order to capture the contents of an ~#+INCLUDE:~ reference, we have to expand it into a block containing the content of the referenced file. Between that and all the postprocessing we do to get a clean capture, there's a lot of buffer mutation going on, so we wrap all that in a change group in order to atomically revert it once we're done with the capture.\n\nTaken all in all, this ends us up with a pretty seriously heavyweight \"utility function\", but that's how these things work out sometimes. Here's the result:\n\n#+NAME: expose-to-js\n#+BEGIN_SRC emacs-lisp :exports code :results silent :var block-name=\"\" :var binding=\"\"\n  (and (not (string= block-name \"\"))\n       (not (string= binding \"\"))\n       (save-excursion\n         (let ((json-encoding-pretty-print t)\n               (block-lang \"\")\n               block-loc block-type from to\n               block-contents cg-handle html-result)\n           ;; Expand #+INCLUDE: keywords so that they become named\n           ;; blocks we can find. Since this expansion mutates the\n           ;; buffer contents, we do it within a change group so that it\n           ;; can be atomically reverted once we're done.\n           (setq cg-handle (prepare-change-group))\n           (activate-change-group cg-handle)\n           (org-export-expand-include-keyword)\n           (unwind-protect\n                (setq block-loc (org-babel-find-named-block block-name))\n             (if (null block-loc)\n                 (signal 'no-such-block\n                         (list (concat \"Block '\" block-name\n                                       \"' not found in this buffer.\")))\n                 (progn\n                   ;; Go to start of block (beginning of #+NAME: line)\n                   (goto-char block-loc)\n                   ;; Find out what kind of block we're dealing with here,\n                   ;; so we can correctly find its end keyword\n                   (save-match-data\n                     (re-search-forward \"^#\\\\+BEGIN_\\\\([A-Za-z]+\\\\)\")\n                     (setq block-type\n                           (downcase (buffer-substring-no-properties\n                                      (match-beginning 1) (match-end 1)))))\n                   ;; Also capture the block language, if any, so that\n                   ;; we know what (if any) kind of unescaping we need\n                   ;; to do\n                   (save-match-data\n                     (and (re-search-forward \" *\\\\([_[:alnum:]]+\\\\)\" nil t)\n                          (setq block-lang\n                                (buffer-substring-no-properties\n                                 (match-beginning 1) (match-end 1)))))\n                   ;; Move ahead to the beginning of the first line in the\n                   ;; actual source, and store that as the character\n                   ;; position where we'll start capturing\n                   (end-of-line)\n                   (forward-char 1)\n                   (setq from (point))\n                   ;; Move ahead to the end of the code block, and store\n                   ;; that as the character position where we'll stop\n                   ;; capturing\n                   (save-match-data\n                     (re-search-forward (concat \"^#\\\\+END_\" block-type \"$\")))\n                   (beginning-of-line)\n                   (setq to (point))\n                   ;; Unescape Org keywords within the source block, if\n                   ;; this is an Org source block\n                   ;; FIXME this doesn't account for erroneously escaped\n                   ;; FIXME block comment lines in e.g. CSS source blocks\n                   (and (string= \"org\" block-lang)\n                        (progn\n                          (goto-char from)\n                          (save-match-data\n                            (while (and (not (> (point) to))\n                                        (re-search-forward \"^\\\\( *\\\\),\\\\(#\\\\+\\\\|\\\\*\\\\)\"\n                                                           to t))\n                              (replace-match \"\\\\1\\\\2\")\n                              (setq to (- to 1))))))\n                   ;; Capture the source block contents...\n                   (setq block-contents\n                         (buffer-substring-no-properties from to))\n                   ;; ...and put together a string with the <script> tag\n                   (setq html-result\n                         (concat \"<script type=\\\"text\/javascript\\\">\" \"\\n\"\n                                 \"window.\" binding\n                                 \" = \"\n                                 (json-encode block-contents) \";\"\n                                 \"\\n\"\n                                 \"<\/script>\"))\n                   (cancel-change-group cg-handle)))\n             ;; Make sure we don't leave the buffer mutated if we signal\n             ;; (this is the `unwind-protect''s unwind form)\n             (cancel-change-group cg-handle))\n           ;; Finally, return the HTML string\n           html-result)))\n#+END_SRC\n\n* Org source download\nNow that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.\n\nNote that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~<script \/>~ element, which immediately follows this text.\n\n#+CALL: expose-to-js(block-name=\"light-rail-tracker.org\",binding=\"OrgDocumentSource\") :results html :exports both\n\nNote also that we're a little bit cheating here, by using =document.write= - a \/very\/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is \/all about\/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.\n\nNot only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:\n\n#+NAME: insert-download-link\n#+BEGIN_SRC js :eval never\n  (function() {\n    var clickHandler = function(e) {\n      e.preventDefault();\n      download(window.OrgDocumentSource, 'light-rail-tracker.org', 'text\/plain');\n      return false;\n    };\n\n    var container = document.createElement('div');\n    var link = document.createElement('a');\n    var title = 'Download light-rail-tracker.org';\n\n    container.id = \"source-download-link-container\";\n\n    link.id = \"source-download-link\";\n    link.href = \"\";\n    link.title = title;\n    link.textContent = title;\n\n    link.addEventListener('click', clickHandler);\n\n    container.appendChild(link);\n\n    document.write(container.outerHTML);\n    \/\/ document.querySelector('div#source-download-link-container')\n    \/\/   .appendChild(link);\n  })();\n#+END_SRC\n\nIt'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.\n\n#+NAME: download-link-styles\n#+BEGIN_SRC css :eval never\n  div#source-download-link-container {\n    text-align: center;\n  }\n\n  a#source-download-link {\n    display: inline-block;\n    padding: 12px;\n    background: #F0F8FF;\n    border: 3px solid #C0C0F0;\n    border-radius: 10px;\n    text-decoration: none;\n    color: black;\n    font-family: sans-serif;\n    font-size: x-large;\n  }\n#+END_SRC\n\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"download-link-styles\") :results html\n\nAnd here we are!\n\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"insert-download-link\") :results html\n\n* UI conveniences\n** Org pre styles\nThe default Org-mode template is a little bit incomplete when it comes to the ~<pre>~ tags enclosing source and example blocks. Let's fix that up a little.\n\nWhile we're at it, let's apply line wrapping to the document source where we include it in itself, so that its many long lines don't require a lot of horizontal scrolling. We'll also get rid of the rather ill-thought-out corner tag that would ordinarily appear when mousing over source blocks with known languages.\n\n#+NAME: pre-styles\n#+BEGIN_SRC css :eval never\n  pre.src, pre.example {\n    background: #002;\n    color: #f0f8ff;\n    overflow-x: auto;\n    padding: 5px;\n    border: black solid 3px;\n    border-radius: 5px;\n  }\n\n  pre#light-rail-tracker\\.org {\n    white-space: pre-wrap;\n  }\n\n  pre::before {\n    display: none !important;\n  }\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"pre-styles\") :results html\n\n** Headline fold\/unfold\nThis document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a ~:folded:~ tag.\n\nThanks to the impressive capabilities of modern stylesheets, we can implement almost all of this functionality in terms of CSS classes - see below for how that's done. We do make fairly heavy use of both [[https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\/General_sibling_selectors][sibling selectors]] and [[https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\/content][the =content= property and =::before= pseudo-element]] to achieve this, so if you're not yet familiar with how those work, now might be a good time to read up.\n\n(Do note that we're taking the opportunity to clean up a couple of warts with the way Org's default HTML export template handles heading tags, too; that's what the ~span.tag~ stuff is about, mostly. With it in place, we can hide the ~folded~ tag (which has no other purpose in this document, except to start a headline out folded) purely in CSS, without having to modify the DOM at all.)\n\n#+NAME: fold-headline-styles\n#+BEGIN_SRC css :eval never\n  \/* Basic headline styles *\/\n  h2, h3 {\n    cursor: pointer;\n    display: inline-block;\n    margin-left: 0ex;\n    padding: 3px;\n    border-radius: 5px;\n    border-width: 1px;\n    border-style: solid;\n    border-color: transparent;\n\n    \/* Seriously, Chrome? *\/\n    margin-top: 5px;\n    margin-bottom: 5px;\n    -webkit-margin-before: 5px;\n    -webkit-margin-after: 5px;\n  }\n\n  h2:hover,\n  h3:hover {\n    background: #ddf;\n    border-color: #446;\n  }\n\n  \/* Indent headlines' siblings (content elements) *\/\n  h2 ~ * , h3 ~ * {\n    margin-left: 4ex;\n  }\n\n  \/* Shade folded headlines *\/\n  h2.folded, h3.folded {\n    color: #444;\n  }\n\n  h2.unfolded, h3.unfolded {\n  }\n\n  \/* Hide content for folded headlines *\/\n  h2.folded ~ *, h3.folded ~ * {\n    display: none;\n  }\n\n  \/* Show content for unfolded headlines *\/\n  h2.unfolded ~ *, h3.unfolded ~ * {\n    display: block;\n    margin-left: 4ex;\n  }\n\n  \/* Fold state indicators *\/\n  h2::before, h3::before {\n    display: inline-block;\n    width: 2ex;\n    max-width: 2ex;\n    min-width: 2ex;\n    text-align: center;\n    margin-right: 1ex;\n    color: #88b;\n  }\n\n  \/* Folded state indicator *\/\n  h2.folded::before, h3.folded::before {\n    content: '+'\n  }\n\n  \/* Unfolded state indicator *\/\n  h2.unfolded::before, h3.unfolded::before {\n    content: '-'\n  }\n\n  \/*\n   ,,* \"Folded\" tag styles begin here\n   ,,*\/\n\n  \/* Hide the \"folded\" tag on headlines *\/\n  span.tag span.folded {\n    display: none;\n  }\n\n  \/* Move some styles off the tag container element and onto tags *\/\n  \/* themselves, so that an empty tag container is invisible      *\/\n  span.tag {\n    background: inherit;\n    padding: none;\n  }\n\n  span.tag * {\n    background: #DDF;\n    padding: 2px;\n  }\n\n  \/* Hide the \"folded\" tag in TOC entries *\/\n  div#text-table-of-contents li span.tag span.folded {\n    display: none;\n  }\n\n  \/* Avoid display of spaces that export doesn't *\/\n  \/* clean up in TOC links                       *\/\n  div#text-table-of-contents li a {\n    text-decoration: none;\n  }\n\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"fold-headline-styles\") :results html\n\nWith all the hard work done in CSS, we can toggle a headline's fold state just by giving it a =folded= or =unfolded= class, which we'll implement as a =click= event listener on headline elements:\n\n#+NAME: fold-headline-script\n#+BEGIN_SRC js :eval never\n  window.addEventListener('DOMContentLoaded', function() {\n    var headlines = document.querySelectorAll('h2,h3');\n    var headline;\n    var startsFolded;\n\n    var toggleHeadlineFold = function() {\n      this.classList.toggle('unfolded');\n      this.classList.toggle('folded');\n    };\n\n    for (var i = 0; i < headlines.length; i++) {\n      headline = headlines.item(i);\n\n      startsFolded = headline\n        .querySelector('span.tag > span.folded');\n      \n      if (startsFolded) {\n        headline.classList.add('folded');\n      } else {\n        headline.classList.add('unfolded');\n      }\n      \n      headline.addEventListener('click',\n                                toggleHeadlineFold.bind(headline));\n    };\n\n    \/\/ TODO unfold sections when their TOC links are clicked\n  });\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"fold-headline-script\") :results html\n\n* Application structure overview\n(...)\n\nIt's not tidy to just hang whatever bindings we please off the global object. For neatness' sake, let's create a single top-level binding, that we'll use to contain our application's various pieces and parts.\n\n#+NAME: app.js\n#+BEGIN_SRC js :eval never\nwindow.app = new Object();\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"app.js\") :results html\n\n* Data sources\n- Map integration via Google Maps\n- User location via browser geolocation API\n- Track layout data via MTA API (XML)\n- Station position data via MTA API (XML)\n- Realtime train position data via MTA API (JSON)\n\n** Tools for fetching data\nSince we're not actually using any kind of framework here, but just vanilla Javascript, we'll want to spend a little effort setting up some tools for convenient fetching and parsing of data from the MTA's APIs.\n\nLet's start with a wrapper around XMLHttpRequest that takes an options object and returns a promise. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.\n\n#+NAME: promisify-xhr.js\n#+BEGIN_SRC js :eval never\n  window.app.fetch = function(url, opts) {\n    var FetchError = function(err, response) {\n      if (err instanceof Error) {\n        this.error = err;\n      } else {\n        this.error = new Error(err);\n      };\n      this.error.response = response;\n      return this.error;\n    };\n\n    var XHR = new XMLHttpRequest();\n    var defer = Q.defer();\n\n    opts = opts || {};\n    var args = {\n      type: opts.type || null,\n      method: opts.method || 'GET',\n      headers: opts.headers || {}\n    };\n\n    var response = {\n      request: XHR,\n      headers: null,\n      status: {\n        code: null,\n        text: null\n      },\n      body: {\n        raw: null,\n        parsed: null\n      }\n    };\n\n    XHR.open(args.method, url);\n\n    Object.keys(args.headers).forEach(function(name) {\n      var value = args.headers[name];\n      XHR.setRequestHeader(name, value);\n    });\n\n    XHR.addEventListener('readystatechange', function(event) {\n      if (XHR.readyState === 4) {\n        response.status = {\n          code: XHR.status,\n          text: XHR.statusText\n        };\n    \n        response.headers = {};\n        XHR.getAllResponseHeaders()\n          .split(\/\\n\/)\n          .filter(function(header) {\n            return header;\n          })\n          .forEach(function(header) {\n            var parts = header.split(\/\\:\/);\n            var name = parts[0];\n            var value = parts.slice(1)\n                .join(':')\n                .replace(\/^\\s+\/, '')\n                .replace(\/\\s+$\/, '');\n            response.headers[name] = value;\n          });\n    \n        try {\n          switch (args.type) {\n          case 'json':\n            response.body.parsed = JSON.parse(XHR.responseText);\n            break;\n          case 'xml':\n            response.body.parsed = XHR.responseXML;\n            break;\n          default:\n            response.body.parsed = XHR.responseText;\n            break;\n          };\n        } catch (e) {\n          console.error('Failed parsing response as ' + args.type);\n          response.body.parsed = XHR.responseText;\n        }\n        response.body.raw = XHR.responseText;\n\n        if (response.status.code === 200) {\n          defer.resolve(response);\n        } else {\n          defer.reject(new FetchError('HTTP request returned status ' + response.status.code,\n                                      response));\n        };\n      };\n    });\n\n    try {\n      XHR.send();\n    } catch (e) {\n      defer.reject(new FetchError(e.message, null));\n    };\n\n    return defer.promise;\n  };\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"promisify-xhr.js\") :results html\n\n** Light Rail track layout data\nWe'll obtain this from the same API that the official tracker uses to retrieve it for its own Google Maps overlay. Happily, as with all MTA APIs involved in this application, there's a CORS header allowing all request origins, so we don't need to proxy through a backend we control in order to fetch the data.\n\n\n\n* Data transformations\n- User location: GMap marker\n- Track layout: convert from XML to GMap polylines\n- Station positions: convert from XML to GMap markers\n- Train positions: convert from JSON to GMap markers\n\n* Google map initialization\n** Instantiate the map\n** Add track polylines\n** Add station polylines\n\n* Train status updates\n** Define train info update function\n- Get train API\n- Render trains as map markers\n** Invoke it on an interval (window interval)\n\n* User position handling\n** Define user position update function\n- Get user position\n- Render it as a map marker\n- Find closest station\n- Center the map at midpoint between user & closest station\n- Zoom the map to show user & closest station\n** Invoke it on an interval (geo API watch)\n\n* UI miscellany\n** Views\n- App view: map takes up whole viewport\n- Org view: map fits into document flow so that app document is visible\n#+NAME: map-views\n#+BEGIN_SRC css :eval never\n  .map-container.app-view {\n    z-index: 1000;\n    position: fixed;\n    left: 0px;\n    right: 0px;\n    top: 0px;\n    bottom: 0px;\n  }\n\n  .map-container.org-view {\n    position: static;\n    width: 100%;\n    height: 600px;\n  }\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"map-views\") :results html\n** View toggle\n- A fixed-position overlay button to switch between app & org view\n\n* App activation\n- Switch to app view\n\n* Org source                                        :folded:\nThis is the complete source of the Org-mode document from which this file was generated.\n\n#+NAME: light-rail-tracker.org\n#+INCLUDE: \".\/light-rail-tracker.org\" src org\n\n* COMMENT File-local variables\nThere are a lot of source blocks in this file. Having to answer a prompt before each one is evaluated gets old fast. Thus we set ~org-confirm-babel-evaluate~ to ~nil~, so that those prompts won't occur.\n\nWhen loading this file in Emacs, it will prompt before setting the value, because *this is an extremely risky file-local variable* -- specifically, if you do this in a file of untrusted code, all of said code will execute during export or when you invoke ~org-babel-execute-buffer~. Therefore, if you have any doubts about whether the code in a file is trustworthy, don't let it set this value.\n\nOf course, my code in this file isn't out to hose you -- but, for your sake, I really hope you won't take my word for that.\n\n# Local Variables:\n# org-confirm-babel-evaluate: nil\n# End:\n";
+window.OrgDocumentSource = "#+TITLE: Baltimore Light Rail tracker\n#+AUTHOR: Aaron Miller <me@aaron-miller.me>\n#+LANGUAGE: en\n#+OPTIONS: \\n:t\n#+HTML_HEAD_EXTRA: <style type=\"text\/css\">body { font-family: sans-serif; -webkit-text-size-adjust: none; }<\/style>\n#+HTML_HEAD_EXTRA: <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" \/>\n\n* Introduction\n\n** What is this?\nIt's a single-page web application which integrates a variety of APIs to produce a map showing:\n- The Baltimore light rail lines and stations\n- If you allow geolocation access, the closest station to your current location\n- Real-time positions of trains currently in service\n- ETA information for trains arriving at the station nearest you\n\n** OK, but what \/is\/ this?\nIt's an Emacs Org-mode file that embodies the aforementioned single-page web application, written in the literate programming style. Exporting this file to HTML, using Org-mode's core export functionality, produces a build of the web application which you can host on your favorite server and use in your favorite browser.\n\nThe best way to read this document is in Emacs with Org 8.x and the Org and Emacs Lisp reference manuals installed. That way, you get the full benefit of this powerful programming environment, in which, for example, the full source and documentation of any Emacs Lisp function is just a few keystrokes away. (If you're wondering: =C-h f RET= while point is on the function name, then =TAB RET= in the ~*Help*~ buffer.)\n\nFailing that, you'll probably get the most benefit out of this document if you come to it with a basic understanding of both Org mode and Emacs Lisp; the former, of course, since the document is written in it, and the latter so that you can understand what's going on in the Emacs Lisp utility functions used throughout this document.\n\nThat said, if you're totally unfamiliar with everything I've just mentioned, there's probably still something for you here. If nothing else, maybe an example of literate programming might come in handy. In any case, enjoy! And if you have questions, don't hesitate to [[mailto:me@aaron-miller.me][ask]].\n\n* Utility functions\nThere are a couple of capabilities that Org mode doesn't have by default, and which we'll need in order to write a web application with it. Here's where we'll implement those. If you're only interested in the parts of this which relate to the web app proper, you can safely ignore this section.\n\n** insert-wrapped-source\nOrg-mode doesn't currently support syntax highlighting in example blocks, and also doesn't support named references to the literal content of a source block (rather than the results of evaluating that source block).\n\nThis is a pain in the neck for us, because we want to do both of these things. Defining our app's Javascript and CSS code in source code blocks is the only way to get it syntax-highlighted in the exported HTML, and of course we need to be able to insert the raw contents of these source blocks into the exported HTML, so that the browser will make use of them.\n\nFortunately, Org is smarter than it knows, and provides a couple of lower-level functions, =org-babel-find-named-block= and =org-babel-read-result=, which make it almost trivial to fetch the contents of a source block. We just need to write a little glue code that'll leverage them to fetch the source we need, and a little more that'll wrap that source in a suitable HTML tag. Here's how we do that:\n\n#+NAME: insert-wrapped-source\n#+BEGIN_SRC emacs-lisp :exports code :results silent :var tag=\"\" :var attrs=() :var block-name=\"\"\n  (and (not (string= tag \"\"))\n       (not (string= block-name \"\"))\n       (cl-flet ((stringify (alist)\n                            (mapconcat #'identity\n                                       (mapcar #'(lambda (pair)\n                                                   (concat (symbol-name (car pair))\n                                                           \"=\" \"\\\"\" (cdr pair) \"\\\"\"))\n                                               alist) \" \")))\n         (let ((block-loc (org-babel-find-named-block block-name))\n               source)\n           (if (null block-loc)\n               (signal 'no-such-block \n                       (list (concat \"Block '\" block-name \"' not found in this buffer.\")))\n               (save-excursion\n                 (goto-char block-loc)\n                 (setq source (org-babel-read-result))\n                 (concat \"<\" tag \" \" (stringify attrs) \">\" \"\\n\"\n                         source \"\\n\"\n                         \"<\/\" tag \">\"))))))\n#+END_SRC\n\nNow that it's defined, we can insert calls to it in our Org file like so:\n\n#+BEGIN_EXAMPLE\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"a-javascript-source-block\") :results html\n#+END_EXAMPLE\n\nand have Org emit the contents of the named block =a-javascript-source-block=, wrapped in ~<script type=\"text\/javascript\">~ and ~<\/script>~.\n\n** expose-to-js\nWe'll find ourselves, later on, wanting an easy way to expose named Org blocks to the Javascript environment in the browser, so that they're available for our application code to use. Let's go ahead and define an Emacs Lisp utility function to do that.\n\nUnfortunately, this isn't quite as simple as we'd have preferred it to be. ~org-babel-read-result~ has some trouble with escaped Org source; in particular, it breaks as soon as it hits an escaped ~#+END_SRC~ keyword. \n\nIn order to do a reliable capturing job, then, we have to do some lower-level stuff with ~re-search-forward~ to find the extent of the block we're capturing. Since we may find ourselves dealing with escaped Org source, we also have to do some unescaping, which also apparently has to happen by hand -- if there's an Org function to do that, I haven't been able to find it yet.\n\nThen, too, in order to capture the contents of an ~#+INCLUDE:~ reference, we have to expand it into a block containing the content of the referenced file. Between that and all the postprocessing we do to get a clean capture, there's a lot of buffer mutation going on, so we wrap all that in a change group in order to atomically revert it once we're done with the capture.\n\nTaken all in all, this ends us up with a pretty seriously heavyweight \"utility function\", but that's how these things work out sometimes. Here's the result:\n\n#+NAME: expose-to-js\n#+BEGIN_SRC emacs-lisp :exports code :results silent :var block-name=\"\" :var binding=\"\"\n  (and (not (string= block-name \"\"))\n       (not (string= binding \"\"))\n       (save-excursion\n         (let ((json-encoding-pretty-print t)\n               (block-lang \"\")\n               block-loc block-type from to\n               block-contents cg-handle html-result)\n           ;; Expand #+INCLUDE: keywords so that they become named\n           ;; blocks we can find. Since this expansion mutates the\n           ;; buffer contents, we do it within a change group so that it\n           ;; can be atomically reverted once we're done.\n           (setq cg-handle (prepare-change-group))\n           (activate-change-group cg-handle)\n           (org-export-expand-include-keyword)\n           (unwind-protect\n                (setq block-loc (org-babel-find-named-block block-name))\n             (if (null block-loc)\n                 (signal 'no-such-block\n                         (list (concat \"Block '\" block-name\n                                       \"' not found in this buffer.\")))\n                 (progn\n                   ;; Go to start of block (beginning of #+NAME: line)\n                   (goto-char block-loc)\n                   ;; Find out what kind of block we're dealing with here,\n                   ;; so we can correctly find its end keyword\n                   (save-match-data\n                     (re-search-forward \"^#\\\\+BEGIN_\\\\([A-Za-z]+\\\\)\")\n                     (setq block-type\n                           (downcase (buffer-substring-no-properties\n                                      (match-beginning 1) (match-end 1)))))\n                   ;; Also capture the block language, if any, so that\n                   ;; we know what (if any) kind of unescaping we need\n                   ;; to do\n                   (save-match-data\n                     (and (re-search-forward \" *\\\\([_[:alnum:]]+\\\\)\" nil t)\n                          (setq block-lang\n                                (buffer-substring-no-properties\n                                 (match-beginning 1) (match-end 1)))))\n                   ;; Move ahead to the beginning of the first line in the\n                   ;; actual source, and store that as the character\n                   ;; position where we'll start capturing\n                   (end-of-line)\n                   (forward-char 1)\n                   (setq from (point))\n                   ;; Move ahead to the end of the code block, and store\n                   ;; that as the character position where we'll stop\n                   ;; capturing\n                   (save-match-data\n                     (re-search-forward (concat \"^#\\\\+END_\" block-type \"$\")))\n                   (beginning-of-line)\n                   (setq to (point))\n                   ;; Unescape Org keywords within the source block, if\n                   ;; this is an Org source block\n                   ;; FIXME this doesn't account for erroneously escaped\n                   ;; FIXME block comment lines in e.g. CSS source blocks\n                   (and (string= \"org\" block-lang)\n                        (progn\n                          (goto-char from)\n                          (save-match-data\n                            (while (and (not (> (point) to))\n                                        (re-search-forward \"^\\\\( *\\\\),\\\\(#\\\\+\\\\|\\\\*\\\\)\"\n                                                           to t))\n                              (replace-match \"\\\\1\\\\2\")\n                              (setq to (- to 1))))))\n                   ;; Capture the source block contents...\n                   (setq block-contents\n                         (buffer-substring-no-properties from to))\n                   ;; ...and put together a string with the <script> tag\n                   (setq html-result\n                         (concat \"<script type=\\\"text\/javascript\\\">\" \"\\n\"\n                                 \"window.\" binding\n                                 \" = \"\n                                 (json-encode block-contents) \";\"\n                                 \"\\n\"\n                                 \"<\/script>\"))\n                   (cancel-change-group cg-handle)))\n             ;; Make sure we don't leave the buffer mutated if we signal\n             ;; (this is the `unwind-protect''s unwind form)\n             (cancel-change-group cg-handle))\n           ;; Finally, return the HTML string\n           html-result)))\n#+END_SRC\n\n* UI conveniences\n** Org pre styles\nThe default Org-mode template is a little bit incomplete when it comes to the ~<pre>~ tags enclosing source and example blocks. Let's fix that up a little.\n\nWhile we're at it, let's apply line wrapping to the document source where we include it in itself, so that its many long lines don't require a lot of horizontal scrolling. We'll also get rid of the rather ill-thought-out corner tag that would ordinarily appear when mousing over source blocks with known languages.\n\n#+NAME: pre-styles\n#+BEGIN_SRC css :eval never\n  pre.src, pre.example {\n    background: #002;\n    color: #f0f8ff;\n    overflow-x: auto;\n    padding: 5px;\n    border: black solid 3px;\n    border-radius: 5px;\n  }\n\n  \/* may not work; see below *\/\n  pre#light-rail-tracker\\.org {\n    white-space: pre-wrap;\n  }\n\n  pre::before {\n    display: none !important;\n  }\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"pre-styles\") :results html\n\nNote that, if you're using Org 8.3, the ID selector for the document source block probably won't work, because that version of Org mode changes the manner in which IDs for source block ~<pre>~ tags are generated. There's a discussion currently underway on the Org mode development ML around a patch to make this behavior conditional; assuming that comes out the way I'd like it to, I'll add the relevant file-local variable to this document, and it won't be a problem. In the meantime, keep it in mind.\n\n** Headline fold\/unfold\nThis document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a ~:folded:~ tag.\n\nThanks to the impressive capabilities of modern stylesheets, we can implement almost all of this functionality in terms of CSS classes - see below for how that's done. We do make fairly heavy use of both [[https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\/General_sibling_selectors][sibling selectors]] and [[https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\/content][the =content= property and =::before= pseudo-element]] to achieve this, so if you're not yet familiar with how those work, now might be a good time to read up.\n\n(Do note that we're taking the opportunity to clean up a couple of warts with the way Org's default HTML export template handles heading tags, too; that's what the ~span.tag~ stuff is about, mostly. With it in place, we can hide the ~folded~ tag (which has no other purpose in this document, except to start a headline out folded) purely in CSS, without having to modify the DOM at all.)\n\n#+NAME: fold-headline-styles\n#+BEGIN_SRC css :eval never\n  \/* Basic headline styles *\/\n  h2, h3 {\n    cursor: pointer;\n    display: inline-block;\n    margin-left: 0ex;\n    padding: 3px;\n    border-radius: 5px;\n    border-width: 1px;\n    border-style: solid;\n    border-color: transparent;\n\n    \/* Seriously, Chrome? *\/\n    margin-top: 5px;\n    margin-bottom: 5px;\n    -webkit-margin-before: 5px;\n    -webkit-margin-after: 5px;\n  }\n\n  h2:hover,\n  h3:hover {\n    background: #ddf;\n    border-color: #446;\n  }\n\n  \/* Indent headlines' siblings (content elements) *\/\n  h2 ~ * , h3 ~ * {\n    margin-left: 4ex;\n  }\n\n  \/* Shade folded headlines *\/\n  h2.folded, h3.folded {\n    color: #444;\n  }\n\n  h2.unfolded, h3.unfolded {\n  }\n\n  \/* Hide content for folded headlines *\/\n  h2.folded ~ *, h3.folded ~ * {\n    display: none;\n  }\n\n  \/* Show content for unfolded headlines *\/\n  h2.unfolded ~ *, h3.unfolded ~ * {\n    display: block;\n    margin-left: 4ex;\n  }\n\n  \/* Fold state indicators *\/\n  h2::before, h3::before {\n    display: inline-block;\n    width: 2ex;\n    max-width: 2ex;\n    min-width: 2ex;\n    text-align: center;\n    margin-right: 1ex;\n    color: #88b;\n  }\n\n  \/* Folded state indicator *\/\n  h2.folded::before, h3.folded::before {\n    content: '+'\n  }\n\n  \/* Unfolded state indicator *\/\n  h2.unfolded::before, h3.unfolded::before {\n    content: '-'\n  }\n\n  \/*\n   ,,* \"Folded\" tag styles begin here\n   ,,*\/\n\n  \/* Hide the \"folded\" tag on headlines *\/\n  span.tag span.folded {\n    display: none;\n  }\n\n  \/* Move some styles off the tag container element and onto tags *\/\n  \/* themselves, so that an empty tag container is invisible      *\/\n  span.tag {\n    background: inherit;\n    padding: none;\n  }\n\n  span.tag * {\n    background: #DDF;\n    padding: 2px;\n  }\n\n  \/* Hide the \"folded\" tag in TOC entries *\/\n  div#text-table-of-contents li span.tag span.folded {\n    display: none;\n  }\n\n  \/* Avoid display of spaces that export doesn't *\/\n  \/* clean up in TOC links                       *\/\n  div#text-table-of-contents li a {\n    text-decoration: none;\n  }\n\n  \/* On narrower (e.g. mobile) displays, don't use left margins to avoid *\/\n  \/* wasting screen space                                                *\/\n\n  @media (max-width: 640px) {\n    h2 ~ * , h3 ~ * {\n      margin-left: auto !important;\n    }\n\n    pre {\n      margin: 0 !important;\n      font-size: smaller;\n    }\n  }\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"fold-headline-styles\") :results html\n\nWith all the hard work done in CSS, we can toggle a headline's fold state just by giving it a =folded= or =unfolded= class, which we'll implement as a =click= event listener on headline elements:\n\n#+NAME: fold-headline-script\n#+BEGIN_SRC js :eval never\n  window.addEventListener('DOMContentLoaded', function() {\n    var headlines = document.querySelectorAll('h2,h3');\n    var headline;\n    var startsFolded;\n\n    var toggleHeadlineFold = function() {\n      this.classList.toggle('unfolded');\n      this.classList.toggle('folded');\n    };\n\n    for (var i = 0; i < headlines.length; i++) {\n      headline = headlines.item(i);\n\n      startsFolded = headline\n        .querySelector('span.tag > span.folded');\n      \n      if (startsFolded) {\n        headline.classList.add('folded');\n      } else {\n        headline.classList.add('unfolded');\n      }\n      \n      headline.addEventListener('click',\n                                toggleHeadlineFold.bind(headline));\n    };\n\n    \/\/ TODO unfold sections when their TOC links are clicked\n  });\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"fold-headline-script\") :results html\n\n* Org source download\nNow that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.\n\nNote that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~<script \/>~ element, which immediately follows this text.\n\n#+CALL: expose-to-js(block-name=\"light-rail-tracker.org\",binding=\"OrgDocumentSource\") :results html :exports both\n\nNote also that we're a little bit cheating here, by using =document.write= - a \/very\/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is \/all about\/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.\n\nNot only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:\n\n#+NAME: insert-download-link\n#+BEGIN_SRC js :eval never\n  (function() {\n    var clickHandler = function(e) {\n      e.preventDefault();\n      download(window.OrgDocumentSource, 'light-rail-tracker.org', 'text\/plain');\n      return false;\n    };\n\n    var container = document.createElement('div');\n    var link = document.createElement('a');\n    var title = 'Download light-rail-tracker.org';\n\n    container.id = \"source-download-link-container\";\n\n    link.id = \"source-download-link\";\n    link.href = \"\";\n    link.title = title;\n    link.textContent = title;\n\n    link.addEventListener('click', clickHandler);\n\n    container.appendChild(link);\n\n    document.write(container.outerHTML);\n    \/\/ document.querySelector('div#source-download-link-container')\n    \/\/   .appendChild(link);\n  })();\n#+END_SRC\n\nIt'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.\n\n#+NAME: download-link-styles\n#+BEGIN_SRC css :eval never\n  div#source-download-link-container {\n    text-align: center;\n  }\n\n  a#source-download-link {\n    display: inline-block;\n    padding: 12px;\n    background: #F0F8FF;\n    border: 3px solid #C0C0F0;\n    border-radius: 10px;\n    text-decoration: none;\n    color: black;\n    font-family: sans-serif;\n    font-size: x-large;\n  }\n#+END_SRC\n\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"download-link-styles\") :results html\n\nAnd here we are!\n\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"insert-download-link\") :results html\n\n* Application binding\nThere's no real reason why we can't just hang the pieces and parts of our application off the global object, but doing so wouldn't be tidy. Let's create a top-level binding so we have a place to put them.\n\n#+NAME: app.js\n#+BEGIN_SRC js :eval never\n  window.app = new Object({\n    classes: {}\n  });\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"app.js\") :results html\n\n* External libraries\nWe could include these in the Org source, but there's not exactly a real need to do so; on the one hand, they aren't going to change, and on the other, its dependencies on external APIs for core functionality mean that this app won't ever be suited for completely offline use. So we'll go ahead and pull them in from wherever they happen to be hosted.\n\n#+NAME: external-library-refs\n#+BEGIN_SRC html :eval never\n  <!-- download.js: easy, cross-browser \"download\" of non-file data -->\n  <script type=\"text\/javascript\"\n          src=\"http:\/\/danml.com\/js\/download.js\"><\/script>\n  <!-- q.js: Kris Kowal's brilliant promises library -->\n  <script type=\"text\/javascript\"\n          src=\"http:\/\/cdnjs.cloudflare.com\/ajax\/libs\/q.js\/0.9.2\/q.min.js\"><\/script>\n#+END_SRC\n\n#+CALL: insert-wrapped-source(tag=\"div\",block-name=\"external-library-refs\") :results html\n\n* Application utility classes\n\n** Event emitter\nSince the train data will update on an interval, we'll want to make it easy to act on new information as it arrives, which we can do by having the data source emit events on which consumer code can register handlers. Unfortunately, while Node.js and friends provide a general-purpose event emitter class, browsers don't; fortunately, it's actually a very simple pattern to implement, so we'll go ahead and do that here.\n\n#+NAME: event-emitter.js\n#+BEGIN_SRC js :eval never\n  app.classes.EventEmitter = function() {\n    this.handlers = {};\n  };\n\n  app.classes.EventEmitter.prototype.emit = function(type \/* ... *\/) {\n    var args = [].slice.call(arguments, 1);\n    if (Array.isArray(this.handlers[type])) {\n      this.handlers[type].forEach(function(handler) {\n        handler(args);\n      });\n    };\n  };\n\n  app.classes.EventEmitter.prototype.on = function(type, handler) {\n    if (! Array.isArray(this.handlers[type])) {\n      this.handlers[type] = [];\n    };\n\n    this.handlers[type].push(handler);\n  };\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"event-emitter.js\") :results html\n\nOf course, the Node implementation has some subtleties ours lacks, but for our purposes, this is all we need.\n\n** Fetching data\nSince we're not actually using any kind of framework here, but just vanilla Javascript, we'll want to spend a little effort setting up some tools for convenient fetching and parsing of data from the MTA's APIs.\n\nLet's start with a wrapper around XMLHttpRequest that takes an options object and returns a [[https:\/\/github.com\/kriskowal\/q][promise]]. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.\n\n#+NAME: promisify-xhr.js\n#+BEGIN_SRC js :eval never\n  window.app.fetch = function(url, opts) {\n    var FetchError = function(err, response) {\n      if (err instanceof Error) {\n        this.error = err;\n      } else {\n        this.error = new Error(err);\n      };\n      this.error.response = response;\n      return this.error;\n    };\n\n    var XHR = new XMLHttpRequest();\n    var defer = Q.defer();\n\n    opts = opts || {};\n    var args = {\n      type: opts.type || null,\n      method: opts.method || 'GET',\n      headers: opts.headers || {}\n    };\n\n    var response = {\n      request: XHR,\n      headers: null,\n      status: {\n        code: null,\n        text: null\n      },\n      body: {\n        raw: null,\n        parsed: null\n      }\n    };\n\n    XHR.open(args.method, url);\n\n    Object.keys(args.headers).forEach(function(name) {\n      var value = args.headers[name];\n      XHR.setRequestHeader(name, value);\n    });\n\n    XHR.addEventListener('readystatechange', function(event) {\n      if (XHR.readyState === 4) {\n        response.status = {\n          code: XHR.status,\n          text: XHR.statusText\n        };\n  \n        response.headers = {};\n        XHR.getAllResponseHeaders()\n          .split(\/\\n\/)\n          .filter(function(header) {\n            return header;\n          })\n          .forEach(function(header) {\n            var parts = header.split(\/\\:\/);\n            var name = parts[0];\n            var value = parts.slice(1)\n                .join(':')\n                .replace(\/^\\s+\/, '')\n                .replace(\/\\s+$\/, '');\n            response.headers[name] = value;\n          });\n  \n        try {\n          switch (args.type) { \/\/ this could also look at content type\n          case 'json':\n            response.body.parsed = JSON.parse(XHR.responseText);\n            break;\n          case 'xml':\n            response.body.parsed = XHR.responseXML;\n            break;\n          default:\n            response.body.parsed = XHR.responseText;\n            break;\n          };\n        } catch (e) {\n          console.error('Failed parsing response as ' + args.type);\n          response.body.parsed = XHR.responseText;\n        }\n        response.body.raw = XHR.responseText;\n\n        if (response.status.code === 200) {\n          defer.resolve(response);\n        } else {\n          defer.reject(new FetchError('HTTP request returned status '\n                                        + response.status.code,\n                                      response));\n        };\n      };\n    });\n\n    try {\n      XHR.send();\n    } catch (err) {\n      defer.reject(new FetchError(err, null));\n    };\n\n    return defer.promise;\n  };\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"promisify-xhr.js\") :results html\n\n* Application structure overview\n(...)\n\n* Data sources\n- Map integration via Google Maps\n- User location via browser geolocation API\n- Track layout data via MTA API (XML)\n- Station position data via MTA API (XML)\n- Realtime train position data via MTA API (JSON)\n\n** Where to keep data\n(...)\n\n#+NAME: data-sources.js\n#+BEGIN_SRC js :eval never\n  app.classes.Source = function(url, opts) {\n    var self = this;\n\n    this.url = url;\n    this.data = null;\n    this.lastResult = null;\n\n    this.fetch = function() {\n      app.fetch(url, opts.fetch)\n        .then(function(res) {\n          self.lastResult = res.status.code;\n          self.data = res.body.parsed;\n        })\n        .catch(function(err) {\n          self.lastResult = err;\n          self.data = null;\n        });\n    };\n\n    if (opts.fetchImmediate) {\n      this.fetch();\n    };\n  };\n\n  app.classes.DataSources = function DataSources() {\n    this.sources = {};\n  };\n\n  app.classes.DataSources.prototype.addSource = function(name, url, opts) {\n    this.sources[name] = new app.classes.Source(url, opts);\n  };\n\n  app.classes.DataSources.prototype.get = function(name) {\n    return this.sources[name].data || this.sources[name].lastResult;\n  };\n\n  app.data = new app.classes.DataSources;\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"script\",attrs='((type . \"text\/javascript\")),block-name=\"data-sources.js\") :results html\n\n** Light Rail track layout data\nWe'll obtain this from the same API that the official tracker uses to retrieve it for its own Google Maps overlay. Happily, as with all MTA APIs involved in this application, there's a CORS header allowing all request origins, so we don't need to proxy through a backend we control in order to fetch the data.\n\n\n\n* Data transformations\n- User location: GMap marker\n- Track layout: convert from XML to GMap polylines\n- Station positions: convert from XML to GMap markers\n- Train positions: convert from JSON to GMap markers\n\n* Google map initialization\n** Instantiate the map\n** Add track polylines\n** Add station polylines\n\n* Train status updates\n** Define train info update function\n- Get train API\n- Render trains as map markers\n** Invoke it on an interval (window interval)\n\n* User position handling\n** Define user position update function\n- Get user position\n- Render it as a map marker\n- Find closest station\n- Center the map at midpoint between user & closest station\n- Zoom the map to show user & closest station\n** Invoke it on an interval (geo API watch)\n\n* UI miscellany\n** Views\n- App view: map takes up whole viewport\n- Org view: map fits into document flow so that app document is visible\n#+NAME: map-views\n#+BEGIN_SRC css :eval never\n  .map-container.app-view {\n    z-index: 1000;\n    position: fixed;\n    left: 0px;\n    right: 0px;\n    top: 0px;\n    bottom: 0px;\n  }\n\n  .map-container.org-view {\n    position: static;\n    width: 100%;\n    height: 600px;\n  }\n#+END_SRC\n#+CALL: insert-wrapped-source(tag=\"style\",attrs='((type . \"text\/css\")),block-name=\"map-views\") :results html\n** View toggle\n- A fixed-position overlay button to switch between app & org view\n\n* App activation\n- Switch to app view\n\n* Org source                                        :folded:\nThis is the complete source of the Org-mode document from which this file was generated.\n\n#+NAME: light-rail-tracker.org\n#+INCLUDE: \".\/light-rail-tracker.org\" src org\n\n* COMMENT File-local variables\nThere are a lot of source blocks in this file. Having to answer a prompt before each one is evaluated gets old fast. Thus we set ~org-confirm-babel-evaluate~ to ~nil~, so that those prompts won't occur.\n\nWhen loading this file in Emacs, it will prompt before setting the value, because *this is an extremely risky file-local variable* -- specifically, if you do this in a file of untrusted code, all of said code will execute during export or when you invoke ~org-babel-execute-buffer~. Therefore, if you have any doubts about whether the code in a file is trustworthy, don't let it set this value.\n\nOf course, my code in this file isn't out to hose you -- but, for your sake, I really hope you won't take my word for that.\n\n# Local Variables:\n# org-confirm-babel-evaluate: nil\n# End:\n";
 </script>
 
 <p>
@@ -581,400 +947,131 @@ And here we are!<br  />
 </div>
 
 <div id="outline-container-orgheadline11" class="outline-2">
-<h2 id="orgheadline11"><span class="section-number-2">5</span> UI conveniences</h2>
+<h2 id="orgheadline11"><span class="section-number-2">5</span> Application binding</h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9"><span class="section-number-3">5.1</span> Org pre styles</h3>
-<div class="outline-text-3" id="text-5-1">
 <p>
-The default Org-mode template is a little bit incomplete when it comes to the <code>&lt;pre&gt;</code> tags enclosing source and example blocks. Let's fix that up a little.<br  />
-</p>
-
-<p>
-While we're at it, let's apply line wrapping to the document source where we include it in itself, so that its many long lines don't require a lot of horizontal scrolling. We'll also get rid of the rather ill-thought-out corner tag that would ordinarily appear when mousing over source blocks with known languages.<br  />
+There's no real reason why we can't just hang the pieces and parts of our application off the global object, but doing so wouldn't be tidy. Let's create a top-level binding so we have a place to put them.<br  />
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-css" id="pre-styles"><span style="color: #00bfff;">pre.src, pre.example </span>{
-  <span style="color: #eedd82;">background</span>: #002;
-  <span style="color: #eedd82;">color</span>: #f0f8ff;
-  <span style="color: #eedd82;">overflow-x</span>: auto;
-  <span style="color: #eedd82;">padding</span>: 5px;
-  <span style="color: #eedd82;">border</span>: black solid 3px;
-  <span style="color: #eedd82;">border-radius</span>: 5px;
-}
-
-<span style="color: #00bfff;">pre#light-rail-tracker\.org </span>{
-  <span style="color: #eedd82;">white-space</span>: pre-wrap;
-}
-
-<span style="color: #eedd82;">pre</span>::before {
-  <span style="color: #eedd82;">display</span>: none <span style="color: #b0c4de;">!important</span>;
-}
-</pre>
-</div>
-<style type="text/css">
-pre.src, pre.example {
-  background: #002;
-  color: #f0f8ff;
-  overflow-x: auto;
-  padding: 5px;
-  border: black solid 3px;
-  border-radius: 5px;
-}
-
-pre#light-rail-tracker\.org {
-  white-space: pre-wrap;
-}
-
-pre::before {
-  display: none !important;
-}
-
-</style>
-</div>
-</div>
-
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10"><span class="section-number-3">5.2</span> Headline fold/unfold</h3>
-<div class="outline-text-3" id="text-5-2">
-<p>
-This document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a <code>:folded:</code> tag.<br  />
-</p>
-
-<p>
-Thanks to the impressive capabilities of modern stylesheets, we can implement almost all of this functionality in terms of CSS classes - see below for how that's done. We do make fairly heavy use of both <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors">sibling selectors</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content">the <code>content</code> property and <code>::before</code> pseudo-element</a> to achieve this, so if you're not yet familiar with how those work, now might be a good time to read up.<br  />
-</p>
-
-<p>
-(Do note that we're taking the opportunity to clean up a couple of warts with the way Org's default HTML export template handles heading tags, too; that's what the <code>span.tag</code> stuff is about, mostly. With it in place, we can hide the <code>folded</code> tag (which has no other purpose in this document, except to start a headline out folded) purely in CSS, without having to modify the DOM at all.)<br  />
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-css" id="fold-headline-styles"><span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Basic headline styles </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">h2, h3 </span>{
-  <span style="color: #eedd82;">cursor</span>: pointer;
-  <span style="color: #eedd82;">display</span>: inline-block;
-  <span style="color: #eedd82;">margin-left</span>: 0ex;
-  <span style="color: #eedd82;">padding</span>: 3px;
-  <span style="color: #eedd82;">border-radius</span>: 5px;
-  <span style="color: #eedd82;">border-width</span>: 1px;
-  <span style="color: #eedd82;">border-style</span>: solid;
-  <span style="color: #eedd82;">border-color</span>: transparent;
-
-  <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Seriously, Chrome? </span><span style="color: #00cd00; font-style: italic;">*/</span>
-  <span style="color: #eedd82;">margin-top</span>: 5px;
-  <span style="color: #eedd82;">margin-bottom</span>: 5px;
-  <span style="color: #eedd82; font-style: italic;">-webkit-margin-before</span>: 5px;
-  <span style="color: #eedd82; font-style: italic;">-webkit-margin-after</span>: 5px;
-}
-
-<span style="color: #eedd82;">h2</span>:hover,
-<span style="color: #00bfff;">h3:hover </span>{
-  <span style="color: #eedd82;">background</span>: #ddf;
-  <span style="color: #eedd82;">border-color</span>: #446;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Indent headlines' siblings (content elements) </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">h2 ~ * , h3 ~ * </span>{
-  <span style="color: #eedd82;">margin-left</span>: 4ex;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Shade folded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">h2.folded, h3.folded </span>{
-  <span style="color: #eedd82;">color</span>: #444;
-}
-
-<span style="color: #00bfff;">h2.unfolded, h3.unfolded </span>{
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide content for folded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">h2.folded ~ *, h3.folded ~ * </span>{
-  <span style="color: #eedd82;">display</span>: none;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Show content for unfolded headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">h2.unfolded ~ *, h3.unfolded ~ * </span>{
-  <span style="color: #eedd82;">display</span>: block;
-  <span style="color: #eedd82;">margin-left</span>: 4ex;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Fold state indicators </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #eedd82;">h2</span>::before, h3::before {
-  <span style="color: #eedd82;">display</span>: inline-block;
-  <span style="color: #eedd82;">width</span>: 2ex;
-  <span style="color: #eedd82;">max-width</span>: 2ex;
-  <span style="color: #eedd82;">min-width</span>: 2ex;
-  <span style="color: #eedd82;">text-align</span>: center;
-  <span style="color: #eedd82;">margin-right</span>: 1ex;
-  <span style="color: #eedd82;">color</span>: #88b;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Folded state indicator </span><span style="color: #00cd00; font-style: italic;">*/</span>
-h2.folded::before, h3.folded::before {
-  <span style="color: #eedd82;">content</span>: <span style="color: #dda0dd;">'+'</span>
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Unfolded state indicator </span><span style="color: #00cd00; font-style: italic;">*/</span>
-h2.unfolded::before, h3.unfolded::before {
-  <span style="color: #eedd82;">content</span>: <span style="color: #dda0dd;">'-'</span>
-}
-
-<span style="color: #00cd00; font-style: italic;">/*</span>
-<span style="color: #00cd00; font-style: italic;"> * "Folded" tag styles begin here</span>
-<span style="color: #00cd00; font-style: italic;"> </span><span style="color: #00cd00; font-style: italic;">*/</span>
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide the "folded" tag on headlines </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">span.tag span.folded </span>{
-  <span style="color: #eedd82;">display</span>: none;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Move some styles off the tag container element and onto tags </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">themselves, so that an empty tag container is invisible      </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">span.tag </span>{
-  <span style="color: #eedd82;">background</span>: inherit;
-  <span style="color: #eedd82;">padding</span>: none;
-}
-
-<span style="color: #00bfff;">span.tag * </span>{
-  <span style="color: #eedd82;">background</span>: #DDF;
-  <span style="color: #eedd82;">padding</span>: 2px;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Hide the "folded" tag in TOC entries </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">div#text-table-of-contents li span.tag span.folded </span>{
-  <span style="color: #eedd82;">display</span>: none;
-}
-
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">Avoid display of spaces that export doesn't </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">clean up in TOC links                       </span><span style="color: #00cd00; font-style: italic;">*/</span>
-<span style="color: #00bfff;">div#text-table-of-contents li a </span>{
-  <span style="color: #eedd82;">text-decoration</span>: none;
-}
-</pre>
-</div>
-<style type="text/css">
-/* Basic headline styles */
-h2, h3 {
-  cursor: pointer;
-  display: inline-block;
-  margin-left: 0ex;
-  padding: 3px;
-  border-radius: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-
-  /* Seriously, Chrome? */
-  margin-top: 5px;
-  margin-bottom: 5px;
-  -webkit-margin-before: 5px;
-  -webkit-margin-after: 5px;
-}
-
-h2:hover,
-h3:hover {
-  background: #ddf;
-  border-color: #446;
-}
-
-/* Indent headlines' siblings (content elements) */
-h2 ~ * , h3 ~ * {
-  margin-left: 4ex;
-}
-
-/* Shade folded headlines */
-h2.folded, h3.folded {
-  color: #444;
-}
-
-h2.unfolded, h3.unfolded {
-}
-
-/* Hide content for folded headlines */
-h2.folded ~ *, h3.folded ~ * {
-  display: none;
-}
-
-/* Show content for unfolded headlines */
-h2.unfolded ~ *, h3.unfolded ~ * {
-  display: block;
-  margin-left: 4ex;
-}
-
-/* Fold state indicators */
-h2::before, h3::before {
-  display: inline-block;
-  width: 2ex;
-  max-width: 2ex;
-  min-width: 2ex;
-  text-align: center;
-  margin-right: 1ex;
-  color: #88b;
-}
-
-/* Folded state indicator */
-h2.folded::before, h3.folded::before {
-  content: '+'
-}
-
-/* Unfolded state indicator */
-h2.unfolded::before, h3.unfolded::before {
-  content: '-'
-}
-
-/*
- ,,* "Folded" tag styles begin here
- ,,*/
-
-/* Hide the "folded" tag on headlines */
-span.tag span.folded {
-  display: none;
-}
-
-/* Move some styles off the tag container element and onto tags */
-/* themselves, so that an empty tag container is invisible      */
-span.tag {
-  background: inherit;
-  padding: none;
-}
-
-span.tag * {
-  background: #DDF;
-  padding: 2px;
-}
-
-/* Hide the "folded" tag in TOC entries */
-div#text-table-of-contents li span.tag span.folded {
-  display: none;
-}
-
-/* Avoid display of spaces that export doesn't */
-/* clean up in TOC links                       */
-div#text-table-of-contents li a {
-  text-decoration: none;
-}
-
-
-</style>
-
-<p>
-With all the hard work done in CSS, we can toggle a headline's fold state just by giving it a <code>folded</code> or <code>unfolded</code> class, which we'll implement as a <code>click</code> event listener on headline elements:<br  />
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-js" id="fold-headline-script">window.addEventListener(<span style="color: #dda0dd;">'DOMContentLoaded'</span>, <span style="color: #4f94cd; font-style: italic;">function</span>() {
-  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">headlines</span> = document.querySelectorAll(<span style="color: #dda0dd;">'h2,h3'</span>);
-  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">headline</span>;
-  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">startsFolded</span>;
-
-  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">toggleHeadlineFold</span> = <span style="color: #4f94cd; font-style: italic;">function</span>() {
-    <span style="color: #7fffd4;">this</span>.classList.toggle(<span style="color: #dda0dd;">'unfolded'</span>);
-    <span style="color: #7fffd4;">this</span>.classList.toggle(<span style="color: #dda0dd;">'folded'</span>);
-  };
-
-  <span style="color: #4f94cd; font-style: italic;">for</span> (<span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">i</span> = 0; i &lt; headlines.length; i++) {
-    headline = headlines.item(i);
-
-    startsFolded = headline
-      .querySelector(<span style="color: #dda0dd;">'span.tag &gt; span.folded'</span>);
-
-    <span style="color: #4f94cd; font-style: italic;">if</span> (startsFolded) {
-      headline.classList.add(<span style="color: #dda0dd;">'folded'</span>);
-    } <span style="color: #4f94cd; font-style: italic;">else</span> {
-      headline.classList.add(<span style="color: #dda0dd;">'unfolded'</span>);
-    }
-
-    headline.addEventListener(<span style="color: #dda0dd;">'click'</span>,
-                              toggleHeadlineFold.bind(headline));
-  };
-
-  <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">TODO unfold sections when their TOC links are clicked</span>
+<pre class="src src-js" id="app.js">window.app = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">Object</span>({
+  classes: {}
 });
 </pre>
 </div>
 <script type="text/javascript">
-window.addEventListener('DOMContentLoaded', function() {
-  var headlines = document.querySelectorAll('h2,h3');
-  var headline;
-  var startsFolded;
-
-  var toggleHeadlineFold = function() {
-    this.classList.toggle('unfolded');
-    this.classList.toggle('folded');
-  };
-
-  for (var i = 0; i < headlines.length; i++) {
-    headline = headlines.item(i);
-
-    startsFolded = headline
-      .querySelector('span.tag > span.folded');
-    
-    if (startsFolded) {
-      headline.classList.add('folded');
-    } else {
-      headline.classList.add('unfolded');
-    }
-    
-    headline.addEventListener('click',
-                              toggleHeadlineFold.bind(headline));
-  };
-
-  // TODO unfold sections when their TOC links are clicked
+window.app = new Object({
+  classes: {}
 });
 
 </script>
-</div>
 </div>
 </div>
 
 <div id="outline-container-orgheadline12" class="outline-2">
-<h2 id="orgheadline12"><span class="section-number-2">6</span> Application structure overview</h2>
+<h2 id="orgheadline12"><span class="section-number-2">6</span> External libraries</h2>
 <div class="outline-text-2" id="text-6">
 <p>
-(&#x2026;)<br  />
-</p>
-
-<p>
-It's not tidy to just hang whatever bindings we please off the global object. For neatness' sake, let's create a single top-level binding, that we'll use to contain our application's various pieces and parts.<br  />
+We could include these in the Org source, but there's not exactly a real need to do so; on the one hand, they aren't going to change, and on the other, its dependencies on external APIs for core functionality mean that this app won't ever be suited for completely offline use. So we'll go ahead and pull them in from wherever they happen to be hosted.<br  />
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-js" id="app.js">window.app = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">Object</span>();
+<pre class="src src-html" id="external-library-refs"><span style="color: #00cd00; font-style: italic;">&lt;!-- </span><span style="color: #00cd00; font-style: italic;">download.js: easy, cross-browser "download" of non-file data </span><span style="color: #00cd00; font-style: italic;">--&gt;</span>
+&lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
+        <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"http://danml.com/js/download.js"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
+<span style="color: #00cd00; font-style: italic;">&lt;!-- </span><span style="color: #00cd00; font-style: italic;">q.js: Kris Kowal's brilliant promises library </span><span style="color: #00cd00; font-style: italic;">--&gt;</span>
+&lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
+        <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
 </pre>
 </div>
-<script type="text/javascript">
-window.app = new Object();
 
-</script>
+<div >
+<!-- download.js: easy, cross-browser "download" of non-file data -->
+<script type="text/javascript"
+        src="http://danml.com/js/download.js"></script>
+<!-- q.js: Kris Kowal's brilliant promises library -->
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js"></script>
+
+</div>
 </div>
 </div>
 
 <div id="outline-container-orgheadline15" class="outline-2">
-<h2 id="orgheadline15"><span class="section-number-2">7</span> Data sources</h2>
+<h2 id="orgheadline15"><span class="section-number-2">7</span> Application utility classes</h2>
 <div class="outline-text-2" id="text-7">
-<ul class="org-ul">
-<li>Map integration via Google Maps<br  /></li>
-<li>User location via browser geolocation API<br  /></li>
-<li>Track layout data via MTA API (XML)<br  /></li>
-<li>Station position data via MTA API (XML)<br  /></li>
-<li>Realtime train position data via MTA API (JSON)<br  /></li>
-</ul>
+</div><div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">7.1</span> Event emitter</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Since the train data will update on an interval, we'll want to make it easy to act on new information as it arrives, which we can do by having the data source emit events on which consumer code can register handlers. Unfortunately, while Node.js and friends provide a general-purpose event emitter class, browsers don't; fortunately, it's actually a very simple pattern to implement, so we'll go ahead and do that here.<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js" id="event-emitter.js">app.classes.EventEmitter = <span style="color: #4f94cd; font-style: italic;">function</span>() {
+  <span style="color: #7fffd4;">this</span>.handlers = {};
+};
+
+app.classes.EventEmitter.<span style="color: #7fffd4;">prototype</span>.emit = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">type</span> <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">... */</span>) {
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">args</span> = [].slice.call(<span style="color: #7fffd4;">arguments</span>, 1);
+  <span style="color: #4f94cd; font-style: italic;">if</span> (Array.isArray(<span style="color: #7fffd4;">this</span>.handlers[type])) {
+    <span style="color: #7fffd4;">this</span>.handlers[type].forEach(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">handler</span>) {
+      handler(args);
+    });
+  };
+};
+
+app.classes.EventEmitter.<span style="color: #7fffd4;">prototype</span>.on = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">type</span>, <span style="color: #eedd82;">handler</span>) {
+  <span style="color: #4f94cd; font-style: italic;">if</span> (! Array.isArray(<span style="color: #7fffd4;">this</span>.handlers[type])) {
+    <span style="color: #7fffd4;">this</span>.handlers[type] = [];
+  };
+
+  <span style="color: #7fffd4;">this</span>.handlers[type].push(handler);
+};
+</pre>
+</div>
+<script type="text/javascript">
+app.classes.EventEmitter = function() {
+  this.handlers = {};
+};
+
+app.classes.EventEmitter.prototype.emit = function(type /* ... */) {
+  var args = [].slice.call(arguments, 1);
+  if (Array.isArray(this.handlers[type])) {
+    this.handlers[type].forEach(function(handler) {
+      handler(args);
+    });
+  };
+};
+
+app.classes.EventEmitter.prototype.on = function(type, handler) {
+  if (! Array.isArray(this.handlers[type])) {
+    this.handlers[type] = [];
+  };
+
+  this.handlers[type].push(handler);
+};
+
+</script>
+
+<p>
+Of course, the Node implementation has some subtleties ours lacks, but for our purposes, this is all we need.<br  />
+</p>
+</div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13"><span class="section-number-3">7.1</span> Tools for fetching data</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14"><span class="section-number-3">7.2</span> Fetching data</h3>
+<div class="outline-text-3" id="text-7-2">
 <p>
 Since we're not actually using any kind of framework here, but just vanilla Javascript, we'll want to spend a little effort setting up some tools for convenient fetching and parsing of data from the MTA's APIs.<br  />
 </p>
 
 <p>
-Let's start with a wrapper around XMLHttpRequest that takes an options object and returns a promise. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.<br  />
+Let's start with a wrapper around XMLHttpRequest that takes an options object and returns a <a href="https://github.com/kriskowal/q">promise</a>. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.<br  />
 </p>
 
 <div class="org-src-container">
@@ -1044,7 +1141,7 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
         });
 
       <span style="color: #4f94cd; font-style: italic;">try</span> {
-        <span style="color: #4f94cd; font-style: italic;">switch</span> (args.type) {
+        <span style="color: #4f94cd; font-style: italic;">switch</span> (args.type) { <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">this could also look at content type</span>
         <span style="color: #4f94cd; font-style: italic;">case</span> <span style="color: #dda0dd;">'json'</span>:
           response.body.parsed = JSON.parse(XHR.responseText);
           <span style="color: #4f94cd; font-style: italic;">break</span>;
@@ -1064,7 +1161,8 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
       <span style="color: #4f94cd; font-style: italic;">if</span> (response.status.code === 200) {
         defer.resolve(response);
       } <span style="color: #4f94cd; font-style: italic;">else</span> {
-        defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(<span style="color: #dda0dd;">'HTTP request returned status '</span> + response.status.code,
+        defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(<span style="color: #dda0dd;">'HTTP request returned status '</span>
+                                      + response.status.code,
                                     response));
       };
     };
@@ -1072,8 +1170,8 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
 
   <span style="color: #4f94cd; font-style: italic;">try</span> {
     XHR.send();
-  } <span style="color: #4f94cd; font-style: italic;">catch</span> (e) {
-    defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(e.message, <span style="color: #7fffd4;">null</span>));
+  } <span style="color: #4f94cd; font-style: italic;">catch</span> (err) {
+    defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(err, <span style="color: #7fffd4;">null</span>));
   };
 
   <span style="color: #4f94cd; font-style: italic;">return</span> defer.promise;
@@ -1128,7 +1226,7 @@ window.app.fetch = function(url, opts) {
         code: XHR.status,
         text: XHR.statusText
       };
-  
+
       response.headers = {};
       XHR.getAllResponseHeaders()
         .split(/\n/)
@@ -1144,9 +1242,9 @@ window.app.fetch = function(url, opts) {
               .replace(/\s+$/, '');
           response.headers[name] = value;
         });
-  
+
       try {
-        switch (args.type) {
+        switch (args.type) { // this could also look at content type
         case 'json':
           response.body.parsed = JSON.parse(XHR.responseText);
           break;
@@ -1166,7 +1264,8 @@ window.app.fetch = function(url, opts) {
       if (response.status.code === 200) {
         defer.resolve(response);
       } else {
-        defer.reject(new FetchError('HTTP request returned status ' + response.status.code,
+        defer.reject(new FetchError('HTTP request returned status '
+                                      + response.status.code,
                                     response));
       };
     };
@@ -1174,8 +1273,8 @@ window.app.fetch = function(url, opts) {
 
   try {
     XHR.send();
-  } catch (e) {
-    defer.reject(new FetchError(e.message, null));
+  } catch (err) {
+    defer.reject(new FetchError(err, null));
   };
 
   return defer.promise;
@@ -1184,10 +1283,123 @@ window.app.fetch = function(url, opts) {
 </script>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14"><span class="section-number-3">7.2</span> Light Rail track layout data</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-orgheadline16" class="outline-2">
+<h2 id="orgheadline16"><span class="section-number-2">8</span> Application structure overview</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+(&#x2026;)<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-2">
+<h2 id="orgheadline19"><span class="section-number-2">9</span> Data sources</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Map integration via Google Maps<br  /></li>
+<li>User location via browser geolocation API<br  /></li>
+<li>Track layout data via MTA API (XML)<br  /></li>
+<li>Station position data via MTA API (XML)<br  /></li>
+<li>Realtime train position data via MTA API (JSON)<br  /></li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">9.1</span> Where to keep data</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+(&#x2026;)<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js" id="data-sources.js">app.classes.Source = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">url</span>, <span style="color: #eedd82;">opts</span>) {
+  <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">self</span> = <span style="color: #7fffd4;">this</span>;
+
+  <span style="color: #7fffd4;">this</span>.url = url;
+  <span style="color: #7fffd4;">this</span>.data = <span style="color: #7fffd4;">null</span>;
+  <span style="color: #7fffd4;">this</span>.lastResult = <span style="color: #7fffd4;">null</span>;
+
+  <span style="color: #7fffd4;">this</span>.fetch = <span style="color: #4f94cd; font-style: italic;">function</span>() {
+    app.fetch(url, opts.fetch)
+      .then(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">res</span>) {
+        self.lastResult = res.status.code;
+        self.data = res.body.parsed;
+      })
+      .<span style="color: #4f94cd; font-style: italic;">catch</span>(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">err</span>) {
+        self.lastResult = err;
+        self.data = <span style="color: #7fffd4;">null</span>;
+      });
+  };
+
+  <span style="color: #4f94cd; font-style: italic;">if</span> (opts.fetchImmediate) {
+    <span style="color: #7fffd4;">this</span>.fetch();
+  };
+};
+
+app.classes.DataSources = <span style="color: #4f94cd; font-style: italic;">function</span> DataSources() {
+  <span style="color: #7fffd4;">this</span>.sources = {};
+};
+
+app.classes.DataSources.<span style="color: #7fffd4;">prototype</span>.addSource = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">name</span>, <span style="color: #eedd82;">url</span>, <span style="color: #eedd82;">opts</span>) {
+  <span style="color: #7fffd4;">this</span>.sources[name] = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">app.classes.Source</span>(url, opts);
+};
+
+app.classes.DataSources.<span style="color: #7fffd4;">prototype</span>.get = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">name</span>) {
+  <span style="color: #4f94cd; font-style: italic;">return</span> <span style="color: #7fffd4;">this</span>.sources[name].data || <span style="color: #7fffd4;">this</span>.sources[name].lastResult;
+};
+
+app.data = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">app.classes.DataSources</span>;
+</pre>
+</div>
+<script type="text/javascript">
+app.classes.Source = function(url, opts) {
+  var self = this;
+
+  this.url = url;
+  this.data = null;
+  this.lastResult = null;
+
+  this.fetch = function() {
+    app.fetch(url, opts.fetch)
+      .then(function(res) {
+        self.lastResult = res.status.code;
+        self.data = res.body.parsed;
+      })
+      .catch(function(err) {
+        self.lastResult = err;
+        self.data = null;
+      });
+  };
+
+  if (opts.fetchImmediate) {
+    this.fetch();
+  };
+};
+
+app.classes.DataSources = function DataSources() {
+  this.sources = {};
+};
+
+app.classes.DataSources.prototype.addSource = function(name, url, opts) {
+  this.sources[name] = new app.classes.Source(url, opts);
+};
+
+app.classes.DataSources.prototype.get = function(name) {
+  return this.sources[name].data || this.sources[name].lastResult;
+};
+
+app.data = new app.classes.DataSources;
+
+</script>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">9.2</span> Light Rail track layout data</h3>
+<div class="outline-text-3" id="text-9-2">
 <p>
 We'll obtain this from the same API that the official tracker uses to retrieve it for its own Google Maps overlay. Happily, as with all MTA APIs involved in this application, there's a CORS header allowing all request origins, so we don't need to proxy through a backend we control in order to fetch the data.<br  />
 </p>
@@ -1197,9 +1409,9 @@ We'll obtain this from the same API that the official tracker uses to retrieve i
 
 
 
-<div id="outline-container-orgheadline16" class="outline-2">
-<h2 id="orgheadline16"><span class="section-number-2">8</span> Data transformations</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgheadline20" class="outline-2">
+<h2 id="orgheadline20"><span class="section-number-2">10</span> Data transformations</h2>
+<div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>User location: GMap marker<br  /></li>
 <li>Track layout: convert from XML to GMap polylines<br  /></li>
@@ -1209,43 +1421,43 @@ We'll obtain this from the same API that the official tracker uses to retrieve i
 </div>
 </div>
 
-<div id="outline-container-orgheadline20" class="outline-2">
-<h2 id="orgheadline20"><span class="section-number-2">9</span> Google map initialization</h2>
-<div class="outline-text-2" id="text-9">
-</div><div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17"><span class="section-number-3">9.1</span> Instantiate the map</h3>
+<div id="outline-container-orgheadline24" class="outline-2">
+<h2 id="orgheadline24"><span class="section-number-2">11</span> Google map initialization</h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">11.1</span> Instantiate the map</h3>
 </div>
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">9.2</span> Add track polylines</h3>
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">11.2</span> Add track polylines</h3>
 </div>
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19"><span class="section-number-3">9.3</span> Add station polylines</h3>
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">11.3</span> Add station polylines</h3>
 </div>
 </div>
 
-<div id="outline-container-orgheadline23" class="outline-2">
-<h2 id="orgheadline23"><span class="section-number-2">10</span> Train status updates</h2>
-<div class="outline-text-2" id="text-10">
-</div><div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">10.1</span> Define train info update function</h3>
-<div class="outline-text-3" id="text-10-1">
+<div id="outline-container-orgheadline27" class="outline-2">
+<h2 id="orgheadline27"><span class="section-number-2">12</span> Train status updates</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">12.1</span> Define train info update function</h3>
+<div class="outline-text-3" id="text-12-1">
 <ul class="org-ul">
 <li>Get train API<br  /></li>
 <li>Render trains as map markers<br  /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline22" class="outline-3">
-<h3 id="orgheadline22"><span class="section-number-3">10.2</span> Invoke it on an interval (window interval)</h3>
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">12.2</span> Invoke it on an interval (window interval)</h3>
 </div>
 </div>
 
-<div id="outline-container-orgheadline26" class="outline-2">
-<h2 id="orgheadline26"><span class="section-number-2">11</span> User position handling</h2>
-<div class="outline-text-2" id="text-11">
-</div><div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24"><span class="section-number-3">11.1</span> Define user position update function</h3>
-<div class="outline-text-3" id="text-11-1">
+<div id="outline-container-orgheadline30" class="outline-2">
+<h2 id="orgheadline30"><span class="section-number-2">13</span> User position handling</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28"><span class="section-number-3">13.1</span> Define user position update function</h3>
+<div class="outline-text-3" id="text-13-1">
 <ul class="org-ul">
 <li>Get user position<br  /></li>
 <li>Render it as a map marker<br  /></li>
@@ -1255,17 +1467,17 @@ We'll obtain this from the same API that the official tracker uses to retrieve i
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline25" class="outline-3">
-<h3 id="orgheadline25"><span class="section-number-3">11.2</span> Invoke it on an interval (geo API watch)</h3>
+<div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29"><span class="section-number-3">13.2</span> Invoke it on an interval (geo API watch)</h3>
 </div>
 </div>
 
-<div id="outline-container-orgheadline29" class="outline-2">
-<h2 id="orgheadline29"><span class="section-number-2">12</span> UI miscellany</h2>
-<div class="outline-text-2" id="text-12">
-</div><div id="outline-container-orgheadline27" class="outline-3">
-<h3 id="orgheadline27"><span class="section-number-3">12.1</span> Views</h3>
-<div class="outline-text-3" id="text-12-1">
+<div id="outline-container-orgheadline33" class="outline-2">
+<h2 id="orgheadline33"><span class="section-number-2">14</span> UI miscellany</h2>
+<div class="outline-text-2" id="text-14">
+</div><div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">14.1</span> Views</h3>
+<div class="outline-text-3" id="text-14-1">
 <ul class="org-ul">
 <li>App view: map takes up whole viewport<br  /></li>
 <li>Org view: map fits into document flow so that app document is visible<br  /></li>
@@ -1308,9 +1520,9 @@ We'll obtain this from the same API that the official tracker uses to retrieve i
 </div>
 </div>
 
-<div id="outline-container-orgheadline28" class="outline-3">
-<h3 id="orgheadline28"><span class="section-number-3">12.2</span> View toggle</h3>
-<div class="outline-text-3" id="text-12-2">
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32"><span class="section-number-3">14.2</span> View toggle</h3>
+<div class="outline-text-3" id="text-14-2">
 <ul class="org-ul">
 <li>A fixed-position overlay button to switch between app &amp; org view<br  /></li>
 </ul>
@@ -1318,18 +1530,18 @@ We'll obtain this from the same API that the official tracker uses to retrieve i
 </div>
 </div>
 
-<div id="outline-container-orgheadline30" class="outline-2">
-<h2 id="orgheadline30"><span class="section-number-2">13</span> App activation</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34"><span class="section-number-2">15</span> App activation</h2>
+<div class="outline-text-2" id="text-15">
 <ul class="org-ul">
 <li>Switch to app view<br  /></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline31" class="outline-2">
-<h2 id="orgheadline31"><span class="section-number-2">14</span> Org source&#xa0;&#xa0;&#xa0;<span class="tag"><span class="folded">folded</span></span></h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orgheadline35" class="outline-2">
+<h2 id="orgheadline35"><span class="section-number-2">16</span> Org source&#xa0;&#xa0;&#xa0;<span class="tag"><span class="folded">folded</span></span></h2>
+<div class="outline-text-2" id="text-16">
 <p>
 This is the complete source of the Org-mode document from which this file was generated.<br  />
 </p>
@@ -1340,7 +1552,8 @@ This is the complete source of the Org-mode document from which this file was ge
 <span style="color: #b3b3b3;">#+AUTHOR:</span> <span style="color: #afeeee;">Aaron Miller <a href="mailto:me%40aaron-miller.me">&lt;me@aaron-miller.me&gt;</a></span>
 <span style="color: #00cd00; font-style: italic;">#+LANGUAGE: en</span>
 <span style="color: #00cd00; font-style: italic;">#+OPTIONS: \n:t</span>
-<span style="color: #00cd00; font-style: italic;">#+HTML_HEAD_EXTRA: &lt;style type="text/css"&gt;body { font-family: sans-serif; }&lt;/style&gt;</span>
+<span style="color: #00cd00; font-style: italic;">#+HTML_HEAD_EXTRA: &lt;style type="text/css"&gt;body { font-family: sans-serif; -webkit-text-size-adjust: none; }&lt;/style&gt;</span>
+<span style="color: #00cd00; font-style: italic;">#+HTML_HEAD_EXTRA: &lt;meta name="viewport" content="width=device-width,initial-scale=1.0" /&gt;</span>
 
 <span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Introduction</span>
 
@@ -1360,23 +1573,8 @@ Failing that, you'll probably get the most benefit out of this document if you c
 
 That said, if you're totally unfamiliar with everything I've just mentioned, there's probably still something for you here. If nothing else, maybe an example of literate programming might come in handy. In any case, enjoy! And if you have questions, don't hesitate to <span style="color: #00ffff; text-decoration: underline;"><a href="mailto:me@aaron-miller.me">ask</a></span>.
 
-<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* External libraries</span>
-Our app depends on a few externally hosted Javascript libraries, so let's go ahead and include them in the HTML document.
-
-
-<span style="color: #00cd00; font-style: italic;">#+NAME: external-library-refs</span>
-<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC html :eval never</span>
-  &lt;!-- download.js: easy, cross-browser <span style="color: #dda0dd;">"download"</span> of non-file data --&gt;
-  &lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
-          <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"<a href="http://danml.com/js/download.js">http://danml.com/js/download.js</a>"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
-  &lt;!-- q.js: Kris Kowal's brilliant promises library --&gt;
-  &lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
-          <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"<a href="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js">http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js</a>"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
-<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
-
-<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="div",block-name="external-library-refs") :results html</span>
-
 <span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Utility functions</span>
+There are a couple of capabilities that Org mode doesn't have by default, and which we'll need in order to write a web application with it. Here's where we'll implement those. If you're only interested in the parts of this which relate to the web app proper, you can safely ignore this section.
 
 <span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** insert-wrapped-source</span>
 Org-mode doesn't currently support syntax highlighting in example blocks, and also doesn't support named references to the literal content of a source block (rather than the results of evaluating that source block).
@@ -1512,74 +1710,6 @@ Taken all in all, this ends us up with a pretty seriously heavyweight "utility f
            html-result)))
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 
-<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Org source download</span>
-Now that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.
-
-Note that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~&lt;script /&gt;~ element, which immediately follows this text.
-
-<span style="color: #00cd00; font-style: italic;">#+CALL: expose-to-js(block-name="light-rail-tracker.org",binding="OrgDocumentSource") :results html :exports both</span>
-
-Note also that we're a little bit cheating here, by using =document.write= - a /very/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is /all about/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.
-
-Not only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:
-
-<span style="color: #00cd00; font-style: italic;">#+NAME: insert-download-link</span>
-<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
-  (<span style="color: #4f94cd; font-style: italic;">function</span>() {
-    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">clickHandler</span> = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">e</span>) {
-      e.preventDefault();
-      download(window.OrgDocumentSource, <span style="color: #dda0dd;">'light-rail-tracker.org'</span>, <span style="color: #dda0dd;">'text/plain'</span>);
-      <span style="color: #4f94cd; font-style: italic;">return</span> <span style="color: #7fffd4;">false</span>;
-    };
-
-    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">container</span> = document.createElement(<span style="color: #dda0dd;">'div'</span>);
-    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">link</span> = document.createElement(<span style="color: #dda0dd;">'a'</span>);
-    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">title</span> = <span style="color: #dda0dd;">'Download light-rail-tracker.org'</span>;
-
-    container.id = <span style="color: #dda0dd;">"source-download-link-container"</span>;
-
-    link.id = <span style="color: #dda0dd;">"source-download-link"</span>;
-    link.href = <span style="color: #dda0dd;">""</span>;
-    link.title = title;
-    link.textContent = title;
-
-    link.addEventListener(<span style="color: #dda0dd;">'click'</span>, clickHandler);
-
-    container.appendChild(link);
-
-    document.write(container.outerHTML);
-    <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">document.querySelector('div#source-download-link-container')</span>
-    <span style="color: #00cd00; font-style: italic;">//   </span><span style="color: #00cd00; font-style: italic;">.appendChild(link);</span>
-  })();
-<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
-
-It'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.
-
-<span style="color: #00cd00; font-style: italic;">#+NAME: download-link-styles</span>
-<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC css :eval never</span>
-<span style="color: #00bfff;">  div#source-download-link-container </span>{
-    <span style="color: #eedd82;">text-align</span>: center;
-  }
-
-<span style="color: #00bfff;">  a#source-download-link </span>{
-    <span style="color: #eedd82;">display</span>: inline-block;
-    <span style="color: #eedd82;">padding</span>: 12px;
-    <span style="color: #eedd82;">background</span>: #F0F8FF;
-    <span style="color: #eedd82;">border</span>: 3px solid #C0C0F0;
-    <span style="color: #eedd82;">border-radius</span>: 10px;
-    <span style="color: #eedd82;">text-decoration</span>: none;
-    <span style="color: #eedd82;">color</span>: black;
-    <span style="color: #eedd82;">font-family</span>: sans-serif;
-    <span style="color: #eedd82;">font-size</span>: x-large;
-  }
-<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
-
-<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="download-link-styles") :results html</span>
-
-And here we are!
-
-<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="insert-download-link") :results html</span>
-
 <span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* UI conveniences</span>
 <span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Org pre styles</span>
 The default Org-mode template is a little bit incomplete when it comes to the ~&lt;pre&gt;~ tags enclosing source and example blocks. Let's fix that up a little.
@@ -1597,6 +1727,7 @@ While we're at it, let's apply line wrapping to the document source where we inc
     <span style="color: #eedd82;">border-radius</span>: 5px;
   }
 
+<span style="color: #00bfff;">  </span><span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">may not work; see below </span><span style="color: #00cd00; font-style: italic;">*/</span>
 <span style="color: #00bfff;">  pre#light-rail-tracker\.org </span>{
     <span style="color: #eedd82;">white-space</span>: pre-wrap;
   }
@@ -1606,6 +1737,8 @@ While we're at it, let's apply line wrapping to the document source where we inc
   }
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 <span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="pre-styles") :results html</span>
+
+Note that, if you're using Org 8.3, the ID selector for the document source block probably won't work, because that version of Org mode changes the manner in which IDs for source block ~&lt;pre&gt;~ tags are generated. There's a discussion currently underway on the Org mode development ML around a patch to make this behavior conditional; assuming that comes out the way I'd like it to, I'll add the relevant file-local variable to this document, and it won't be a problem. In the meantime, keep it in mind.
 
 <span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Headline fold/unfold</span>
 This document has a lot of sections with headlines. To simplify navigation, let's make them fold and unfold when clicked or touched. We'll leave headlines unfolded by default, with an option to override it by giving a headline a ~:folded:~ tag.
@@ -1717,6 +1850,19 @@ Thanks to the impressive capabilities of modern stylesheets, we can implement al
     <span style="color: #eedd82;">text-decoration</span>: none;
   }
 
+  <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">On narrower (e.g. mobile) displays, don't use left margins to avoid </span><span style="color: #00cd00; font-style: italic;">*/</span>
+  <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">wasting screen space                                                </span><span style="color: #00cd00; font-style: italic;">*/</span>
+
+  <span style="color: #b0c4de;">@media</span> (max-width: 640px) {
+<span style="color: #00bfff;">    h2 ~ * , h3 ~ * </span>{
+      <span style="color: #eedd82;">margin-left</span>: auto <span style="color: #b0c4de;">!important</span>;
+    }
+
+<span style="color: #00bfff;">    pre </span>{
+      <span style="color: #eedd82;">margin</span>: 0 <span style="color: #b0c4de;">!important</span>;
+      <span style="color: #eedd82;">font-size</span>: smaller;
+    }
+  }
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 <span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="fold-headline-styles") :results html</span>
 
@@ -1755,28 +1901,136 @@ With all the hard work done in CSS, we can toggle a headline's fold state just b
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 <span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="fold-headline-script") :results html</span>
 
-<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Application structure overview</span>
-(...)
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Org source download</span>
+Now that we have our libraries, we can set up an HTML5 download link that'll let you save a copy of this document's Org source without referencing an external file. That's nice because it preserves our ability to distribute this entire application by passing a single file around, and since the HTML export includes a literal copy of the Org source, this lets us easily extract the source back out of the build.
 
-It's not tidy to just hang whatever bindings we please off the global object. For neatness' sake, let's create a single top-level binding, that we'll use to contain our application's various pieces and parts.
+Note that the ~window.OrgDocumentSource~ binding is created by an inline call to the ~expose-to-js~ utility function we defined earlier. If you're reading the HTML version, you won't see the inline call syntax, but you can use a DOM inspector to examine the resulting ~&lt;script /&gt;~ element, which immediately follows this text.
+
+<span style="color: #00cd00; font-style: italic;">#+CALL: expose-to-js(block-name="light-rail-tracker.org",binding="OrgDocumentSource") :results html :exports both</span>
+
+Note also that we're a little bit cheating here, by using =document.write= - a /very/ old-fashioned technique. (I first called =document.write= in 1995, I think...) This is strongly disrecommended for modern applications because it relies on promiscuous intermingling of Javascript and HTML sources. On the other hand, this application is written in the literate style, which is /all about/ promiscuously intermingling various types of source, so I figure the usual stricture doesn't apply.
+
+Not only that, but =document.write= is very useful here; using it means we can drop the download link into the document by calling our =insert-wrapped-source= utility function on it, without having to do anything else. So let's party like it's 1995:
+
+<span style="color: #00cd00; font-style: italic;">#+NAME: insert-download-link</span>
+<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
+  (<span style="color: #4f94cd; font-style: italic;">function</span>() {
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">clickHandler</span> = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">e</span>) {
+      e.preventDefault();
+      download(window.OrgDocumentSource, <span style="color: #dda0dd;">'light-rail-tracker.org'</span>, <span style="color: #dda0dd;">'text/plain'</span>);
+      <span style="color: #4f94cd; font-style: italic;">return</span> <span style="color: #7fffd4;">false</span>;
+    };
+
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">container</span> = document.createElement(<span style="color: #dda0dd;">'div'</span>);
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">link</span> = document.createElement(<span style="color: #dda0dd;">'a'</span>);
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">title</span> = <span style="color: #dda0dd;">'Download light-rail-tracker.org'</span>;
+
+    container.id = <span style="color: #dda0dd;">"source-download-link-container"</span>;
+
+    link.id = <span style="color: #dda0dd;">"source-download-link"</span>;
+    link.href = <span style="color: #dda0dd;">""</span>;
+    link.title = title;
+    link.textContent = title;
+
+    link.addEventListener(<span style="color: #dda0dd;">'click'</span>, clickHandler);
+
+    container.appendChild(link);
+
+    document.write(container.outerHTML);
+    <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">document.querySelector('div#source-download-link-container')</span>
+    <span style="color: #00cd00; font-style: italic;">//   </span><span style="color: #00cd00; font-style: italic;">.appendChild(link);</span>
+  })();
+<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
+
+It'd be nice to style the download link to look pretty, too, wouldn't it? Let's do that.
+
+<span style="color: #00cd00; font-style: italic;">#+NAME: download-link-styles</span>
+<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC css :eval never</span>
+<span style="color: #00bfff;">  div#source-download-link-container </span>{
+    <span style="color: #eedd82;">text-align</span>: center;
+  }
+
+<span style="color: #00bfff;">  a#source-download-link </span>{
+    <span style="color: #eedd82;">display</span>: inline-block;
+    <span style="color: #eedd82;">padding</span>: 12px;
+    <span style="color: #eedd82;">background</span>: #F0F8FF;
+    <span style="color: #eedd82;">border</span>: 3px solid #C0C0F0;
+    <span style="color: #eedd82;">border-radius</span>: 10px;
+    <span style="color: #eedd82;">text-decoration</span>: none;
+    <span style="color: #eedd82;">color</span>: black;
+    <span style="color: #eedd82;">font-family</span>: sans-serif;
+    <span style="color: #eedd82;">font-size</span>: x-large;
+  }
+<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
+
+<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="style",attrs='((type . "text/css")),block-name="download-link-styles") :results html</span>
+
+And here we are!
+
+<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="insert-download-link") :results html</span>
+
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Application binding</span>
+There's no real reason why we can't just hang the pieces and parts of our application off the global object, but doing so wouldn't be tidy. Let's create a top-level binding so we have a place to put them.
 
 <span style="color: #00cd00; font-style: italic;">#+NAME: app.js</span>
 <span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
-window.app = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">Object</span>();
+  window.app = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">Object</span>({
+    classes: {}
+  });
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 <span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="app.js") :results html</span>
 
-<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Data sources</span>
-- Map integration via Google Maps
-- User location via browser geolocation API
-- Track layout data via MTA API (XML)
-- Station position data via MTA API (XML)
-- Realtime train position data via MTA API (JSON)
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* External libraries</span>
+We could include these in the Org source, but there's not exactly a real need to do so; on the one hand, they aren't going to change, and on the other, its dependencies on external APIs for core functionality mean that this app won't ever be suited for completely offline use. So we'll go ahead and pull them in from wherever they happen to be hosted.
 
-<span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Tools for fetching data</span>
+<span style="color: #00cd00; font-style: italic;">#+NAME: external-library-refs</span>
+<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC html :eval never</span>
+  &lt;!-- download.js: easy, cross-browser <span style="color: #dda0dd;">"download"</span> of non-file data --&gt;
+  &lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
+          <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"<a href="http://danml.com/js/download.js">http://danml.com/js/download.js</a>"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
+  &lt;!-- q.js: Kris Kowal's brilliant promises library --&gt;
+  &lt;<span style="color: #00bfff;">script</span> <span style="color: #eedd82;">type</span>=<span style="color: #dda0dd;">"text/javascript"</span>
+          <span style="color: #eedd82;">src</span>=<span style="color: #dda0dd;">"<a href="http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js">http://cdnjs.cloudflare.com/ajax/libs/q.js/0.9.2/q.min.js</a>"</span>&gt;&lt;/<span style="color: #00bfff;">script</span>&gt;
+<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
+
+<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="div",block-name="external-library-refs") :results html</span>
+
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Application utility classes</span>
+
+<span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Event emitter</span>
+Since the train data will update on an interval, we'll want to make it easy to act on new information as it arrives, which we can do by having the data source emit events on which consumer code can register handlers. Unfortunately, while Node.js and friends provide a general-purpose event emitter class, browsers don't; fortunately, it's actually a very simple pattern to implement, so we'll go ahead and do that here.
+
+<span style="color: #00cd00; font-style: italic;">#+NAME: event-emitter.js</span>
+<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
+  app.classes.EventEmitter = <span style="color: #4f94cd; font-style: italic;">function</span>() {
+    <span style="color: #7fffd4;">this</span>.handlers = {};
+  };
+
+  app.classes.EventEmitter.<span style="color: #7fffd4;">prototype</span>.emit = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">type</span> <span style="color: #00cd00; font-style: italic;">/* </span><span style="color: #00cd00; font-style: italic;">... */</span>) {
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">args</span> = [].slice.call(<span style="color: #7fffd4;">arguments</span>, 1);
+    <span style="color: #4f94cd; font-style: italic;">if</span> (Array.isArray(<span style="color: #7fffd4;">this</span>.handlers[type])) {
+      <span style="color: #7fffd4;">this</span>.handlers[type].forEach(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">handler</span>) {
+        handler(args);
+      });
+    };
+  };
+
+  app.classes.EventEmitter.<span style="color: #7fffd4;">prototype</span>.on = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">type</span>, <span style="color: #eedd82;">handler</span>) {
+    <span style="color: #4f94cd; font-style: italic;">if</span> (! Array.isArray(<span style="color: #7fffd4;">this</span>.handlers[type])) {
+      <span style="color: #7fffd4;">this</span>.handlers[type] = [];
+    };
+
+    <span style="color: #7fffd4;">this</span>.handlers[type].push(handler);
+  };
+<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
+<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="event-emitter.js") :results html</span>
+
+Of course, the Node implementation has some subtleties ours lacks, but for our purposes, this is all we need.
+
+<span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Fetching data</span>
 Since we're not actually using any kind of framework here, but just vanilla Javascript, we'll want to spend a little effort setting up some tools for convenient fetching and parsing of data from the MTA's APIs.
 
-Let's start with a wrapper around XMLHttpRequest that takes an options object and returns a promise. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.
+Let's start with a wrapper around XMLHttpRequest that takes an options object and returns a <span style="color: #00ffff; text-decoration: underline;"><a href="https://github.com/kriskowal/q">promise</a></span>. There are lots of libraries which will do this for us, but on the other hand, it's such a trivial task that we may as well go ahead and do it ourselves as an exercise.
 
 <span style="color: #00cd00; font-style: italic;">#+NAME: promisify-xhr.js</span>
 <span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
@@ -1845,7 +2099,7 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
           });
 
         <span style="color: #4f94cd; font-style: italic;">try</span> {
-          <span style="color: #4f94cd; font-style: italic;">switch</span> (args.type) {
+          <span style="color: #4f94cd; font-style: italic;">switch</span> (args.type) { <span style="color: #00cd00; font-style: italic;">// </span><span style="color: #00cd00; font-style: italic;">this could also look at content type</span>
           <span style="color: #4f94cd; font-style: italic;">case</span> <span style="color: #dda0dd;">'json'</span>:
             response.body.parsed = JSON.parse(XHR.responseText);
             <span style="color: #4f94cd; font-style: italic;">break</span>;
@@ -1865,7 +2119,8 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
         <span style="color: #4f94cd; font-style: italic;">if</span> (response.status.code === 200) {
           defer.resolve(response);
         } <span style="color: #4f94cd; font-style: italic;">else</span> {
-          defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(<span style="color: #dda0dd;">'HTTP request returned status '</span> + response.status.code,
+          defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(<span style="color: #dda0dd;">'HTTP request returned status '</span>
+                                        + response.status.code,
                                       response));
         };
       };
@@ -1873,14 +2128,69 @@ Let's start with a wrapper around XMLHttpRequest that takes an options object an
 
     <span style="color: #4f94cd; font-style: italic;">try</span> {
       XHR.send();
-    } <span style="color: #4f94cd; font-style: italic;">catch</span> (e) {
-      defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(e.message, <span style="color: #7fffd4;">null</span>));
+    } <span style="color: #4f94cd; font-style: italic;">catch</span> (err) {
+      defer.reject(<span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">FetchError</span>(err, <span style="color: #7fffd4;">null</span>));
     };
 
     <span style="color: #4f94cd; font-style: italic;">return</span> defer.promise;
   };
 <span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
 <span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="promisify-xhr.js") :results html</span>
+
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Application structure overview</span>
+(...)
+
+<span style="color: #c1ffc1; font-size: 125%; font-weight: bold;">* Data sources</span>
+- Map integration via Google Maps
+- User location via browser geolocation API
+- Track layout data via MTA API (XML)
+- Station position data via MTA API (XML)
+- Realtime train position data via MTA API (JSON)
+
+<span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Where to keep data</span>
+(...)
+
+<span style="color: #00cd00; font-style: italic;">#+NAME: data-sources.js</span>
+<span style="color: #00cd00; font-style: italic;">#+BEGIN_SRC js :eval never</span>
+  app.classes.Source = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">url</span>, <span style="color: #eedd82;">opts</span>) {
+    <span style="color: #4f94cd; font-style: italic;">var</span> <span style="color: #eedd82;">self</span> = <span style="color: #7fffd4;">this</span>;
+
+    <span style="color: #7fffd4;">this</span>.url = url;
+    <span style="color: #7fffd4;">this</span>.data = <span style="color: #7fffd4;">null</span>;
+    <span style="color: #7fffd4;">this</span>.lastResult = <span style="color: #7fffd4;">null</span>;
+
+    <span style="color: #7fffd4;">this</span>.fetch = <span style="color: #4f94cd; font-style: italic;">function</span>() {
+      app.fetch(url, opts.fetch)
+        .then(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">res</span>) {
+          self.lastResult = res.status.code;
+          self.data = res.body.parsed;
+        })
+        .<span style="color: #4f94cd; font-style: italic;">catch</span>(<span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">err</span>) {
+          self.lastResult = err;
+          self.data = <span style="color: #7fffd4;">null</span>;
+        });
+    };
+
+    <span style="color: #4f94cd; font-style: italic;">if</span> (opts.fetchImmediate) {
+      <span style="color: #7fffd4;">this</span>.fetch();
+    };
+  };
+
+  app.classes.DataSources = <span style="color: #4f94cd; font-style: italic;">function</span> DataSources() {
+    <span style="color: #7fffd4;">this</span>.sources = {};
+  };
+
+  app.classes.DataSources.<span style="color: #7fffd4;">prototype</span>.addSource = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">name</span>, <span style="color: #eedd82;">url</span>, <span style="color: #eedd82;">opts</span>) {
+    <span style="color: #7fffd4;">this</span>.sources[name] = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">app.classes.Source</span>(url, opts);
+  };
+
+  app.classes.DataSources.<span style="color: #7fffd4;">prototype</span>.get = <span style="color: #4f94cd; font-style: italic;">function</span>(<span style="color: #eedd82;">name</span>) {
+    <span style="color: #4f94cd; font-style: italic;">return</span> <span style="color: #7fffd4;">this</span>.sources[name].data || <span style="color: #7fffd4;">this</span>.sources[name].lastResult;
+  };
+
+  app.data = <span style="color: #4f94cd; font-style: italic;">new</span> <span style="color: #98fb98;">app.classes.DataSources</span>;
+<span style="color: #00cd00; font-style: italic;">#+END_SRC</span>
+<span style="color: #00cd00; font-style: italic;">#+CALL: insert-wrapped-source(tag="script",attrs='((type . "text/javascript")),block-name="data-sources.js") :results html</span>
 
 <span style="color: #c1ffc1; font-size: 103%; font-weight: bold;">** Light Rail track layout data</span>
 We'll obtain this from the same API that the official tracker uses to retrieve it for its own Google Maps overlay. Happily, as with all MTA APIs involved in this application, there's a CORS header allowing all request origins, so we don't need to proxy through a backend we control in order to fetch the data.
@@ -1964,7 +2274,7 @@ Of course, my code in this file isn't out to hose you -- but, for your sake, I r
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aaron Miller &lt;me@aaron-miller.me&gt;</p>
-<p class="date">Created: 2016-02-24 Wed 22:28</p>
+<p class="date">Created: 2016-02-28 Sun 11:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
